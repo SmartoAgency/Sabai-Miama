@@ -1,0 +1,132 @@
+.footer {
+  position: relative;
+  padding-top: var(--section-v-offset);
+  padding-left: var(--page-side-fields);
+  padding-right: var(--page-side-fields);
+  padding-bottom: 40px;
+  background-color: var(--color-dark);
+  a {
+    text-decoration: none;
+    color: var(--color-white);
+  }
+  .screen-grid {
+    z-index: 0;
+    opacity: 0.1;
+    pointer-events: none
+  }
+  &__content {
+    @include row-flex();
+  }
+  &__subtitle {
+    @include size(1);
+    @include shift(0);
+  }
+  &__link1 {
+    @include size(1);
+    @include shift(0);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    
+  }
+  &__link2 {
+    @include size(1);
+    @include shift(0);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    
+  }
+  &__contacts {
+    @include size(1);
+    @include shift(0);
+    
+  }
+  &__separate-line {
+    @include size(4);
+    @include shift(0);
+    height: 1px;
+    background-color: rgba(225, 225, 225, 0.20);
+    margin-top: calc(var(--section-v-offset) / 2);
+    margin-bottom: calc(var(--section-v-offset) / 2);
+  }
+  &__year {
+    @include size(1);
+    @include shift(0);
+    
+  }
+  &__copyright {
+    @include size(1);
+    @include shift(0);
+    
+  }
+  &__socials {
+    @include size(1);
+    @include shift(0);
+    display: flex;
+    flex-wrap: wrap;
+    .social-link~.social-link {
+      margin-left: 10px;
+    }
+    
+  }
+  &__developer {
+    @include size(1);
+    @include shift(0);
+    
+  }
+
+  .dev-logo {
+    position: absolute;
+    right: var(--page-side-fields);
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    span {
+      max-width: 100px;
+      color: var(--color-white);
+      font-size: 12px;
+      text-align: right;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 100%; /* 12px */
+      letter-spacing: -0.24px;
+      text-transform: uppercase;
+      margin-right: 8px;
+      align-self: flex-start;
+      padding-top: 1px;
+    }
+    svg {
+      width: 45px;
+      height: 50px;
+    }
+  }
+}
+
+
+.social-link {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba($color-white, 0.2);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .25s ease-out;
+    transform-origin: center;
+  }
+  @media (hover: hover) {
+    &:hover {
+      img {
+        transform: rotate(15deg);
+      }
+    }
+  }
+
+}

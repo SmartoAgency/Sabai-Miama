@@ -1,0 +1,48 @@
+.home-about-us {
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-top: var(--section-v-offset);
+    padding-bottom: var(--section-v-offset);
+    position: relative;
+    &__content  {
+        @include row-flex();
+    }
+    &__subtitle  {
+        @include size(1);
+        @include shift(0);
+    }
+    &__title  {
+        @include size(3);
+        @include shift(0);
+        margin-bottom: 40px;
+    }
+    &__description1  {
+        @include size(1);
+        @include shift-right(0);
+        @include shift-left(2);
+        margin-bottom: 100px;
+    }
+    &__description2  {
+        @include size(1);
+        @include shift(0);
+        margin-bottom: 100px;
+
+    }
+    &__image  {
+        @include size(2);
+        @include shift-left(1);
+        @include shift-right(0);
+    }
+    &__more  {
+        @include size(1);
+        @include shift(0);
+    }
+    &__more-image  {
+        margin-bottom: 40px;
+        
+    }
+    &__more-text  {
+        margin-bottom: 40px;
+        
+    }
+}

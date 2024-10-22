@@ -1,0 +1,41 @@
+.home-company-projects {
+    position: relative;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-top: var(--section-v-offset);
+    padding-bottom: var(--section-v-offset);
+    &__content {
+        @include row-flex();
+    }
+    &__slider {
+        margin-bottom: calc(var(--section-v-offset) / 2);
+        @include size(4);
+        @include shift(0);
+    }
+    &__title {
+        @include size(2);
+        @include shift(0);
+    }
+    &__description {
+        @include size(1);
+        @include shift(0);
+    }
+    &__counter {
+        @include size(1);
+        @include shift(0);
+        text-align: right;
+    }
+    &__slide {
+        padding-bottom: 100%;
+        position: relative;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.button-30 {
+    @include text-style-1920-navigation;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    border: 1px solid rgba($color-white, 0.2);
+    border-radius: 100px;
+    padding: 15px 27px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.45s cubic-bezier(0.3, 1, 0.8, 1);
+    [stroke],
+    [fill] {
+        transition: 0.45s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: -10%;
+        content: "";
+        background: #f0f1f8;
+        background-color: var(--color-white);
+        width: 120%;
+        height: 100%;
+        transform: translate3d(-100%, 0, 0);
+        transition: transform 0.45s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+    
+    @media (hover: hover) {
+        &:hover:after {
+            transform: skew(-26deg);
+        }
+        &:hover {
+            color: var(--color-black);
+            [stroke] {
+                stroke: var(--color-black);
+            }
+            [fill] {
+                fill: var(--color-black);
+            }
+        }
+    }
+    span,
+    svg {
+        z-index: 1;
+        position: relative;
+    }
+
+    svg:last-child {
+        margin-left: 8px;
+        @media screen and (max-width:600px){
+            margin-left: 4px;
+        }
+    }
+
+    svg:first-child {
+        margin-right: 8px;
+    }
+}
+
+.desktop {
+    .button-30 {
+        &--blue:hover {
+            background: var(--color-white) !important;
+            color: var(--button-color) !important;
+            ;
+        }
+    }
+}
+
+
+.mobile {
+    .button-30 {
+        padding: 18px 16px;
+    }
+}

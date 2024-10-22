@@ -1,0 +1,31 @@
+.home-press {
+    position: relative;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-top: var(--section-v-offset);
+    padding-bottom: var(--section-v-offset);
+    &__content {
+        @include row-flex();
+    }
+    &__subtitle {
+        @include size(1);
+        @include shift(0);
+    }
+    &__title {
+        @include size(3);
+        @include shift(0);
+        margin-bottom: calc(var(--section-v-offset) / 2);
+    }
+    &__news-container {
+        @include size(4);
+        @include shift(0);
+    }
+    &__news-container-grid {
+        @include row-flex();
+        .news-card {
+            background-color: var(--color-gray-bg);
+            @include size(2);
+            @include shift(0);
+        }
+    }
+}

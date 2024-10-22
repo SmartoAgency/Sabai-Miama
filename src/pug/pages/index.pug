@@ -1,0 +1,34 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'project'
+    var id_page = 'home'
+    var class_page = 'home '
+
+block meta
+  title= 'Smartorange Spinhouse'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/home.bundle.js')
+block content
+  include ./home/home-front-screen.pug
+  include ./home/home-about-us.pug
+  include ./home/home-awards.pug
+  include ./home/home-media.pug
+  include ./home/home-press.pug
+  include ./home/home-our-process.pug
+  include ./home/home-with-render-block.pug
+  include ./home/home-company-projects.pug
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
