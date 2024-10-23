@@ -16,6 +16,7 @@
   }
   &__content {
     @include row-flex();
+    align-items: flex-start;
   }
   &__subtitle {
     @include size(1);
@@ -40,7 +41,14 @@
   &__contacts {
     @include size(1);
     @include shift(0);
-    
+    &-group {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+    &-group~&-group {
+      margin-top: 40px;
+    }
   }
   &__separate-line {
     @include size(4);
@@ -53,11 +61,13 @@
   &__year {
     @include size(1);
     @include shift(0);
+    align-self: center;
     
   }
   &__copyright {
     @include size(1);
     @include shift(0);
+    align-self: center;
     
   }
   &__socials {
@@ -65,6 +75,7 @@
     @include shift(0);
     display: flex;
     flex-wrap: wrap;
+    align-self: center;
     .social-link~.social-link {
       margin-left: 10px;
     }
@@ -73,33 +84,39 @@
   &__developer {
     @include size(1);
     @include shift(0);
-    
+    text-align: right;
+  }
+
+  &__link {
+    position: relative;
+    width: max-content;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      transform-origin: left;
+      background-color: var(--color-white);
+      transform: scaleX(0);
+      transition: .25s ease-out;
+    }
+  }
+  @media (hover: hover) {
+    .footer__link:hover::after {
+      transform: scaleX(1);
+    }
   }
 
   .dev-logo {
-    position: absolute;
-    right: var(--page-side-fields);
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    span {
-      max-width: 100px;
-      color: var(--color-white);
-      font-size: 12px;
-      text-align: right;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 100%; /* 12px */
-      letter-spacing: -0.24px;
-      text-transform: uppercase;
-      margin-right: 8px;
-      align-self: flex-start;
-      padding-top: 1px;
-    }
+    width: 56px;
+    height: 61px;
+    display: block;
+    margin-left: auto;
     svg {
-      width: 45px;
-      height: 50px;
+      width: 100%;
+      height: 100%;
     }
   }
 }

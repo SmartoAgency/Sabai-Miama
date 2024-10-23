@@ -1,0 +1,85 @@
+- 
+  var processAccordeons = [
+    {
+      title: "architectural design",
+      subtitle: "phase 1",
+      content: [
+        {
+          title: 'DESIGN & BUILD',
+          text: 'Design and Build with Sabal Luxury Builder, we build your home from start to finish with a fixed price (or cost +) while managing design, architecture, engineers, permitting, zoning, board and construction. We will select the best architect and engineers with you.',
+          img: './assets/images/process/process-work-phases/1_1.jpg',
+        },
+        {
+          title: 'CONSTRUCTION DOCUMENT',
+          text: 'Prepare Architectural and full set of plans for coordination and approval by owner. We implement BIM software (Building Information Modelling) to predict potential construction hazards and prevent them by adjusting the design. This also allow the contractors to lead their teams safely through every step in the workflow and document.',
+          img: './assets/images/process/process-work-phases/1_2.jpg',
+        },
+        {
+          title: 'INTERIOR DESIGN',
+          text: 'Before starting we’ll help you select the best materials quality, finishes, lighting, appliances, etc. for your home. Design your home in collaboration with our designers (such as TOGU Design) or your own designer with comfort and tranquility in mind. the process to meet safety regulations and pass on-site evaluations.',
+          img: './assets/images/process/process-work-phases/1_3.jpg',
+        }
+      ]
+    },
+    {
+      title: "PRE-CONSTRUCTION & PERMITTING",
+      subtitle: "phase 2",
+      content: [
+        {
+          title: 'VALUE ENGINEERING & CONFLICT MANAGEMENT',
+          text: 'Our expert team of architects and engineers will review your plans and offer ideas and feedback on all details concerning floor plans, architecture, and interior design for your consideration. Our job is to implement the vision you, your architect and designer have, all while avoiding any change orders.',
+          img: './assets/images/process/process-work-phases/2_1.jpg',
+        },
+        {
+          title: 'ESTIMATING & CONSTRUCTION BUDGET',
+          text: 'We will prepare deliverables & bid packages, developing quantity-based estimates and qualifying bids. We will also review bids and possible or proposed alternates for conformance and optimization of the preliminary target budget.',
+          img: './assets/images/process/process-work-phases/2_2.jpg',
+        },
+        {
+          title: 'PERMITTING',
+          text: 'Prepare and submit complete signed and sealed by all required design professionals a full set of CDs for permitting by AHJ. Attend meetings as required and address AHJ building comments through obtention of final Permit for construction.',
+          img: './assets/images/process/process-work-phases/2_3.jpg',
+        }
+      ]
+    },
+    {
+      title: "CONSTRUCTION",
+      subtitle: "phase 3",
+      content: [
+        {
+          title: 'CONSTRUCTION',
+          text: 'After reviewing all the plans, select all finishes and have permit approved, now we are ready to build your luxury home!',
+          img: './assets/images/process/process-work-phases/3_1.jpg',
+        },
+        {
+          title: 'CONSTRUCTION PROJECT MANAGEMENT SOFTWARE',
+          text: 'We provide timelines of project construction and utilize comprehensive software that will allow the client to monitor the construction progress and the team’s decisions/selections. Weekly progress meetings are held and weekly project status reports are created to ensure everyone has full disclosure on construction progress.',
+          img: './assets/images/process/process-work-phases/3_2.jpg',
+        },
+      ]
+    }
+  ]
+
+.process-work-phases 
+  +screenGrid
+  .process-work-phases__content
+    .process-work-phases__subtitle.g_grid-text-horisontal-padding.text-style-1920-subtitle.text-color-subtitle-gray Work phases
+    .process-work-phases__title.text-style-1920-h-2.g_grid-text-horisontal-padding All the way from idea to finished space with expert precision
+    each val in processAccordeons
+      .process-work-phases__accordeon(data-process-accordeon)
+        .process-work-phases__accordeon-top
+          .process-work-phases__accordeon-top-subtitle.text-style-1920-subtitle.text-color-subtitle-gray #{val.subtitle}
+          .process-work-phases__accordeon-top-title.text-style-1920-h-3 #{val.title}
+          .process-work-phases__accordeon-top-icon(data-process-accordeon-toggle)
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="79" height="79" rx="39.5" stroke="#5D6357"/>
+              <path d="M39.002 47L39.002 41L33.002 41L33.002 39L39.002 39L39.002 33L41.002 33L41.002 39L47.002 39L47.002 41L41.002 41L41.002 47L39.002 47Z" fill="#5D6357"/>
+            </svg>
+        .process-work-phases__accordeon-content(data-process-accordeon-content style="display: none")
+          each val1 in val.content
+            .process-work-phases__accordeon-content-item
+              .process-work-phases__accordeon-content-text 
+                div.text-style-1920-h-4 #{val1.title}
+                div.text-color-subtitle-gray #{val1.text}
+              .process-work-phases__accordeon-content-img
+                img(src=val1.img, alt="")

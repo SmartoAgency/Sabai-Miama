@@ -1,0 +1,35 @@
+-
+  var processSecondItems = [
+
+    { title: "Design",
+      text: "We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires."},
+    { title: "architectural",
+      text: "We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires."},
+    { title: "engeenering",
+      text: "We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires."},
+    { title: "permitting",
+      text: "We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires."},
+    { title: "pre-construction",
+      text: "We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires."},
+    { title: "construction",
+      text: "We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires."},
+    { title: "interior decor",
+      text: "We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires."},
+  ]
+  
+
+.process-second
+  +screenGrid
+  .process-second__content 
+    .process-second__subtitle.text-style-1920-subtitle.text-color-subtitle-gray.g_grid-text-horisontal-padding Our Process
+    .process-second__title.text-style-1920-h-2.g_grid-text-horisontal-padding All the way from idea to finished space with expert precision
+    .process-second__text1.text-color-subtitle-gray.g_grid-text-horisontal-padding Our expert team takes a holistic approach to construction by becoming partners with owners to make their visions of their high-end luxury home a reality.
+    .process-second__text2.text-color-subtitle-gray.g_grid-text-horisontal-padding We guide clients through every stage, from initial concept and design to the final touches, ensuring every detail reflects their personal style and desires.
+    each val in processSecondItems
+      .process-second__item
+        .process-second__item-title.text-style-1920-h-4 #{val.title}
+        .process-second__item-icon
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#969696"/>
+          </svg>
+        .process-second__item-text #{val.text}

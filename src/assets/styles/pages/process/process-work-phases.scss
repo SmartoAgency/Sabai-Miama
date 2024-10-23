@@ -1,0 +1,86 @@
+.process-work-phases {
+    position: relative;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    padding-top: calc(var(--section-v-offset) / 2);
+    padding-bottom: calc(var(--section-v-offset) / 2);
+    &__content {
+        @include row-flex;
+    }
+    &__subtitle {
+        @include size(1);
+        @include shift(0);
+    }
+    &__title {
+        @include size(3);
+        @include shift(0);
+        margin-bottom: calc(var(--section-v-offset) / 2);
+
+    }
+    &__accordeon~&__accordeon {
+        margin-top: -1px;
+    }
+    &__accordeon {
+        @include size(3);
+        @include shift-right(0);
+        @include shift-left(1);
+        background-color: var(--color-white);
+        // border-top: 1px solid #E1E1E1;
+        // border-bottom: 1px solid #E1E1E1;
+        border: 1px solid #E1E1E1;
+        padding-left: 20px;
+        padding-right: 20px;
+        &-top {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            // border-bottom: 1px solid #E1E1E1;
+            &-subtitle {
+
+            }
+            &-title {
+                align-self: center;
+            }
+            &-icon {
+                cursor: pointer;
+            }
+        }
+        &-content {
+            // display: none;
+            &-item {
+                @include row-flex;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: -10px;
+                    top: 0;
+                    width: calc(100% + 20px);
+                    height: 1px;
+                    background-color: var(--color-gray-line);
+                }
+                // border-top: 1px solid var(--color-gray-line);
+            }
+            &-text {
+                @include size(1.33333);
+                @include shift(0);
+                padding-top: 40px;
+                padding-bottom: 40px;
+                padding-right: 20px;
+                border-right: 1px solid var(--color-gray-line);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            &-img {
+                @include size(2.666667);
+                @include shift(0);
+                padding: 40px 20px;
+                border-left: 1px solid var(--color-gray-line);
+            }
+        }
+        &.active &-content {
+            // display: block;
+        }
+    }
+}

@@ -14,24 +14,6 @@ import { formsHandler } from "./modules/form/formsHandler";
 
 const scroller = lenis;
 
-const buttonScrollToRef = document.querySelectorAll('.header__links>a');
-// const sectionRef = document.getElementById('sectionScroll');
-
-buttonScrollToRef.forEach(button => {
-  if (button) {
-    button.addEventListener('click', e => {
-      e.preventDefault();
-      const sectionRef = document.getElementById(button.getAttribute('href').replace('#', ''));
-      const sectionId = sectionRef.getAttribute('id');
-      const url = new URL(window.location.href);
-      url.hash = sectionId;
-      window.history.pushState({}, '', url);
-      lenis.scrollTo(sectionRef);
-    });
-  }
-});
-
-
 Swiper.use([EffectFade, Navigation, Pagination, Thumbs, FreeMode]);
 /** ******************************* */
 /*

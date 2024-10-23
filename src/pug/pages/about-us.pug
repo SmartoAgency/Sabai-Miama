@@ -1,0 +1,40 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'About us'
+    var id_page = 'id-page-about_us'
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/about-us.bundle.js')
+block content
+  .screen-contain.home-front-screen
+    button(type="button" data-down-arrow).text-style-1920-subtitle.text-white.home-front-screen__helper
+      <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.47058 14.8988L11 24.2203M11 24.2203L20.5294 14.8988M11 24.2203C11 18.6965 11 6.47502 11 1.77979" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    .home-front-screen__content  
+      div.text-style-1920-h-1.text-color-white.home-front-screen__text1 Your trusted partner in the world of real estate
+      .home-front-screen__slider
+        .home-front-screen__slider-lines-wrapper
+          .home-front-screen__slider-line
+            .home-front-screen__slider-line-item
+            .home-front-screen__slider-line-bg
+      div.home-front-screen__subtitle.text-style-1920-h-4.text-color-white ABOUT US
+      div.home-front-screen__description.text-style-1920-h-5.text-color-white Since it’s beginnings Sabal Luxury Builder reputation for honesty and loyalty extends beyond our clients to professionals in our field.”
+    .home-front-screen__bg
+      img(src="./assets/images/about-us/front-bg.jpg" alt="home-front-screen-bg" loading="lazy")
+  include ./about-us/about-us-safeguards.pug
+  include ./about-us/about-us-recognition.pug
+  include ./about-us/about-us-block-with-render.pug
+  include ./about-us/about-us-founders.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

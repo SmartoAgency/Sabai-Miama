@@ -284,3 +284,9 @@ input[type=number]::-webkit-outer-spin-button {
 		display: none;
 	}
 }
+
+
+.swiper-button-disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
