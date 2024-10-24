@@ -1,0 +1,37 @@
+-
+  var projectsList = [
+    
+    {title: "7310 & 7330 BELLE MEADE, MIAMI FL",
+    img: './assets/images/projects/projects-list/1.jpg'},
+    {title: "240 NW 54TH ST. MIAMI, FL",
+    img: './assets/images/projects/projects-list/2.jpg'},
+    {title: "2305 N RIVERSIDE DR. POMPANO BEACH, FL",
+    img: './assets/images/projects/projects-list/3.jpg'},
+    {title: "2305 N RIVERSIDE DR. POMPANO BEACH, FL",
+    img: './assets/images/projects/projects-list/4.jpg'},
+    {title: "240 NW 54TH ST. MIAMI, FL",
+    img: './assets/images/projects/projects-list/5.jpg'},
+    {title: "7310 & 7330 BELLE MEADE, MIAMI FL",
+    img: './assets/images/projects/projects-list/6.jpg'},
+    {title: "7310 & 7330 BELLE MEADE, MIAMI FL",
+    img: './assets/images/projects/projects-list/7.jpg'},
+    {title: "7310 & 7330 BELLE MEADE, MIAMI FL",
+    img: './assets/images/projects/projects-list/8.jpg'},
+  ]
+
+.projects-list
+  +screenGrid
+  .projects-list__content
+    each project in projectsList
+      a(href="/single-project").projects-card
+        .projects-card__img
+          img(src=project.img alt="project" loading="lazy")
+        .projects-card__title.text-style-1920-h-5= project.title
+    .projects-list__button.g_grid-text-horisontal-padding
+      button(type="button" data-load-more-projects).button-30.button-30--body
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="44" height="44" rx="22" fill="#1C1B20"/>
+          <path d="M29 22.998H23V28.998H21V22.998H15V20.998H21V14.998H23V20.998H29V22.998Z" fill="white"/>
+        </svg>
+        span Load More
+      

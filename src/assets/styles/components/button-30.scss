@@ -9,6 +9,12 @@
     position: relative;
     overflow: hidden;
     transition: 0.45s cubic-bezier(0.3, 1, 0.8, 1);
+    &--body {
+        border-radius: 100px;
+        border: 1px solid var(--color-dark);
+        color: var(--color-dark);
+        @include text-style-1920-h-5;
+    }
     [stroke],
     [fill] {
         transition: 0.45s cubic-bezier(0.3, 1, 0.8, 1);
@@ -26,6 +32,10 @@
         transform: translate3d(-100%, 0, 0);
         transition: transform 0.45s cubic-bezier(0.3, 1, 0.8, 1);
     }
+
+    &--body:after {
+        background-color: var(--color-dark);
+    }
     
     @media (hover: hover) {
         &:hover:after {
@@ -38,6 +48,16 @@
             }
             [fill] {
                 fill: var(--color-black);
+            }
+        }
+        &--body:hover {
+            color: var(--color-white);
+            background-color: var(--color-dark);
+            rect[fill] {
+                fill: var(--color-white);
+            }
+            path[fill] {
+                fill: var(--color-dark);
             }
         }
     }
@@ -55,7 +75,7 @@
     }
 
     svg:first-child {
-        margin-right: 8px;
+        margin-right: 10px;
     }
 }
 

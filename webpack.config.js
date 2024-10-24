@@ -7,6 +7,7 @@ const config = {
     'immediate-loading': './src/assets/scripts/immediate-loading.js',
     'home': './src/assets/scripts/home.js',
     'process': './src/assets/scripts/gulp-modules/process.js',
+    'projects': './src/assets/scripts/gulp-modules/projects.js',
     'about-us': './src/assets/scripts/gulp-modules/about-us.js',
     index: './src/assets/scripts/index-app.js',
   },

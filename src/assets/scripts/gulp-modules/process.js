@@ -1,3 +1,4 @@
+import Swiper from 'swiper';
 import $ from 'jquery';
 
 function processAccordeons() {
@@ -18,3 +19,12 @@ function processAccordeons() {
 
 
 processAccordeons();
+
+function processSwipers() {
+    const processSwiper = new Swiper('[data-process-gallery-slider]', {
+        slidesPerView: 2.5,
+        spaceBetween: 20,
+    });
+}
+
+processSwipers();

@@ -1,0 +1,21 @@
+-
+  var processGalleryImages = [
+    './assets/images/process/process-gallery/1.jpg',
+    './assets/images/process/process-gallery/3.jpg',
+    './assets/images/process/process-gallery/2.jpg',
+  ]
+
+.process-gallery
+  +screenGrid
+  .process-gallery__content 
+    .process-gallery__subtitle.g_grid-text-horisontal-padding.text-style-1920-subtitle.text-color-subtitle-gray Gallery
+    .process-gallery__title.text-style-1920-h-2.g_grid-text-horisontal-padding Inspiration and Excellence in Every Project by SABAL LUXURY BUILDER
+    .process-gallery__text1.text-color-subtitle-gray.g_grid-text-horisontal-padding Browse through our project gallery and be inspired by the sophisticated architecture and impeccable construction quality.
+    .process-gallery__text2.text-color-subtitle-gray.g_grid-text-horisontal-padding  Each project reflects our high standards and attention to detail.
+    .process-gallery__slider
+      .swiper-container(data-process-gallery-slider)
+        .swiper-wrapper
+          each image in processGalleryImages
+            .swiper-slide
+              .process-gallery__slide
+                img(src=image, alt="", srcset="")

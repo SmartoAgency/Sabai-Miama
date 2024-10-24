@@ -33,16 +33,22 @@
         &-top {
             padding: 40px 0;
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
             // border-bottom: 1px solid #E1E1E1;
+            @include row-flex;
             &-subtitle {
-
+                @include size(1.33333);
+                @include shift(0);
             }
             &-title {
-                align-self: center;
+                // align-self: center;
+                @include size(2.3);
+                @include shift(0);
             }
             &-icon {
                 cursor: pointer;
+                @include size(0.35);
+                @include shift(0);
             }
         }
         &-content {
