@@ -1,0 +1,22 @@
+-
+  var snglProjectChar = [
+    '17,377 SQ. FT',
+    '6,100 SQ.FT HOUSE',
+    '6 BATHROOMS',
+    '6 BEDROOMS',
+    '3 CAR GARAGE',
+    'OUTDOOR POOL',
+    'JACUZZI',
+    'DOCK BOAT',
+  ]
+
+.single-project-characteristics 
+  +screenGrid
+  .single-project-characteristics__content
+    .single-project-characteristics__subtitle.text-style-1920-subtitle.text-color-subtitle-gray.g_grid-text-horisontal-padding Сharacteristics
+    .single-project-characteristics__title.text-style-1920-h-2.g_grid-text-horisontal-padding Features that reflect luxury and comfort
+    each val,i in snglProjectChar
+      .single-project-characteristics__item
+        .single-project-characteristics__item-icon
+          img(src="./assets/images/single-project/icons/"+(i+1)+".svg", alt="#")
+        .single-project-characteristics__item-title #{val}

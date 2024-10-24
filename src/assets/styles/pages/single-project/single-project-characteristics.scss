@@ -1,0 +1,36 @@
+.single-project-characteristics  {
+    padding: var(--section-v-offset) var(--page-side-fields);
+    position: relative;
+    &__content {
+        @include row-flex;
+    }
+    &__subtitle {
+        @include size(1);
+        @include shift(0);
+    }
+    &__title {
+        @include size(3);
+        @include shift(0);
+        margin-bottom: calc(var(--section-v-offset) / 2);
+    }
+    &__item {
+        @include size(1);
+        @include shift(0);
+        padding: 40px;
+        text-align: center;
+        background-color: var(--color-gray-bg);
+        margin-bottom: 20px;
+        &-icon {
+            text-align: center;
+            margin-bottom: 40px;
+            img {
+                width: 100px;
+                height: auto;
+                margin: auto;
+            }
+        }
+        &-title {
+
+        }
+    }
+}

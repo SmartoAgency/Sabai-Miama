@@ -8,7 +8,9 @@ const config = {
     'home': './src/assets/scripts/home.js',
     'process': './src/assets/scripts/gulp-modules/process.js',
     'projects': './src/assets/scripts/gulp-modules/projects.js',
+    'press': './src/assets/scripts/gulp-modules/press.js',
     'about-us': './src/assets/scripts/gulp-modules/about-us.js',
+    'single-project': './src/assets/scripts/gulp-modules/single-project.js',
     index: './src/assets/scripts/index-app.js',
   },
   output: {
