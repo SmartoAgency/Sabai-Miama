@@ -76,6 +76,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-h-2() {
 	font-size: 104px;
+	font-size: pxWidthInVw(104);
 	font-family: Bebas Neue;
 	font-weight: 400;
 	font-style: normal;
@@ -85,6 +86,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-h-3() {
 	font-size: 64px;
+	font-size: pxWidthInVw(64);
 	font-family: Bebas Neue;
 	font-weight: 400;
 	font-style: normal;
@@ -94,6 +96,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-h-4() {
 	font-size: 32px;
+	font-size: pxWidthInVw(32);
 	font-family: Roboto;
 	font-weight: 500;
 	font-style: normal;
@@ -112,6 +115,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-subtitle() {
 	font-size: 24px;
+	font-size: pxWidthInVw(24);
 	font-family: Roboto;
 	font-weight: 400;
 	font-style: normal;

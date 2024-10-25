@@ -21,7 +21,37 @@
     }
     &__slide {
         padding: 40px;
-        background-color: var(--color-gray-bg)
+        background-color: var(--color-gray-bg);
+        display: grid; 
+        grid-template-columns: repeat(2, auto); 
+        grid-template-rows: 1fr 1fr; 
+        row-gap: calc(var(--section-v-offset) / 2); 
+        grid-template-areas: 
+            "date img"
+            "text text"; 
+        &-number {
+            grid-area: date;
+        }
+        &-text {
+            grid-area: text;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 20px;
+        }
+        &-logo {
+            position: relative;
+            padding-bottom: 61%;
+            grid-area: img;
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
     }
     &__image {
         @include size(2);

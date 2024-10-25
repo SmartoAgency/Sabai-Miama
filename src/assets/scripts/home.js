@@ -1,4 +1,4 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, EffectFade } from 'swiper';
 import { useState } from "./modules/helpers/helpers";
 import { debounce, once } from "lodash";
 import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
@@ -79,18 +79,56 @@ function ourProcessSlider() {
 ourProcessSlider();
 
 function companyProjectsSlider() {
-    const slider = new Swiper('[home-company-projects-slider]', {
+    const slider = new Swiper('[data-home-company-projects-slider]', {
         modules: [Navigation],
         slidesPerView: 4.5,
         spaceBetween: 20,
-        // navigation: {
-        //     nextEl: '[data-home-process-slider-next]',
-        //     prevEl: '[data-home-process-slider-prev]',
-        // },
-    })
+        navigation: {
+            nextEl: '[data-home-company-projects-slider-next]',
+            prevEl: '[data-home-company-projects-slider-prev]',
+        },
+    });
+    const slider2 = new Swiper('[data-home-company-projects-slider-second]', {
+        modules: [EffectFade],
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+    });
+
+    slider.on('slideChange', function () {
+        slider2.slideTo(slider.activeIndex);
+    });
+
+
+    document.querySelectorAll('[data-home-company-projects-slider] .swiper-slide').forEach((el, index) => {
+        el.addEventListener('mouseenter', function () {
+            slider2.slideTo(index);
+        });
+    });
 }
 
 companyProjectsSlider();
 
 splitToLinesAndFadeUp('.home-with-render-block__title1, .home-with-render-block__title2', gsap)
 
+function homeAwardsAccordeon() {
+    const image = document.querySelector('.home-awards__image');
+    document.querySelectorAll('[data-home-accordeon]').forEach((el) => {
+        el.addEventListener('click', function (evt) {
+            image.querySelector('img').src = el.dataset.img;
+            image.classList.add('active');
+            image.style.transform = '';
+            alignImageByAccordeon(el, image);
+        });
+    });
+}
+
+function alignImageByAccordeon(accordeon, image) {
+    const imageTop = accordeon.getBoundingClientRect().top;
+    const accordeonTop = image.getBoundingClientRect().top;
+    console.log(imageTop, accordeonTop);
+    image.style.transform = `translateY(${imageTop - accordeonTop}px)`;
+    
+}
+homeAwardsAccordeon();

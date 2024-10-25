@@ -29,10 +29,13 @@
         @include size(1);
         @include shift(0);
         margin-top: calc(var(--section-v-offset) / 2);
+        position: relative;
+        overflow: hidden;
+
         &-inner {
             border-radius: 50%;
-            border: 1px solid #E1E1E1;
-            padding: 112px 50px;
+            // border: 1px solid #E1E1E1;
+            padding: pxWidthInVw(112) pxWidthInVw(50);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -41,12 +44,33 @@
             width: calc(100% - 40px);
             margin-left: auto;
             margin-right: auto;
+            overflow: hidden;
+        }
+        &-hover {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: -1;
+            background-color: var(--color-white);
+            border: 1px solid #E1E1E1;
+            path {
+                transform-origin: center;
+                transform-box: fill-box;
+                transition: transform .45s ease-out;
+                transform: translateY(100%);
+
+            }
         }
         &-title {
             color: var(--color-accent-green);
             text-align: center;
             font-family: $default-font3;
             font-size: 64px;
+            font-size: pxWidthInVw(64);
             font-style: normal;
             font-weight: 600;
             line-height: 140%; /* 89.6px */
@@ -55,6 +79,23 @@
         &-text {
             @include text-style-1920-h-4;
             max-width: 280px;
+        }
+        @media (hover: hover) {
+            &-inner,
+            &-text,
+            &-title {
+                transition: .35s ease-out;
+            }
+            &:hover  &-inner{
+                // background-color: var(--color-accent-green);
+            }
+            &:hover &-hover path {
+                transform: translateY(0);
+            }
+            &:hover &-text,
+            &:hover &-title {
+                color: var(--color-white);
+            }
         }
     }
 }

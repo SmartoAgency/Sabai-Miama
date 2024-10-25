@@ -12,7 +12,7 @@
 .home-company-projects
   +screenGrid
   .home-company-projects__content
-    .home-company-projects__slider.swiper-container(home-company-projects-slider)
+    .home-company-projects__slider.swiper-container(data-home-company-projects-slider)
       .swiper-wrapper
         each val in slides
           .swiper-slide
@@ -20,14 +20,24 @@
               img(src=val, alt="#")
     .home-company-projects__title.text-style-1920-h-2.g_grid-text-horisontal-padding company’s projects
     .home-company-projects__description.g_grid-text-horisontal-padding
-      span (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-        <path d="M6.4 19.5L5 18.1L10.6 12.5L5 6.9L6.4 5.5L12 11.1L17.6 5.5L19 6.9L13.4 12.5L19 18.1L17.6 19.5L12 13.9L6.4 19.5Z" fill="#969696"/>
-      </svg>
-      span )
-      div.text-style-1920-h-4 1300 BRICKELL BAY DR. MIAMI, FL
-      div Welcome to this penthouse spanning 7,581 square feet across two magnificent floors. In this penthouse, every detail resonates with luxury and purpose, creating an ambiance that is simultaneously inspiring and welcoming.
+      .swiper-container(data-home-company-projects-slider-second)
+        .swiper-wrapper
+          each val, index in slides
+            .swiper-slide.home-company-projects__slide-text
+              .swiper-slide.home-company-projects__slide-text-top
+                span (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M6.4 19.5L5 18.1L10.6 12.5L5 6.9L6.4 5.5L12 11.1L17.6 5.5L19 6.9L13.4 12.5L19 18.1L17.6 19.5L12 13.9L6.4 19.5Z" fill="#969696"/>
+                </svg>
+                span )
+              div.text-style-1920-h-4 #{index} BRICKELL BAY DR. MIAMI, FL
+              div Welcome to this penthouse spanning 7,581 square feet across two magnificent floors. In this penthouse, every detail resonates with luxury and purpose, creating an ambiance that is simultaneously inspiring and welcoming.
     .home-company-projects__counter.g_grid-text-horisontal-padding
-      span 01
-      span /
-      span 06
+      <svg data-home-company-projects-slider-prev width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="79.5" y="79.5" width="79" height="79" rx="39.5" transform="rotate(-180 79.5 79.5)" stroke="#5D6357"/>
+        <path d="M38.1011 30.4706L28.7797 40M28.7797 40L38.1011 49.5294M28.7797 40C34.3035 40 46.5249 40 51.2202 40" stroke="#5D6357" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg data-home-company-projects-slider-next width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="79" height="79" rx="39.5" stroke="#5D6357"/>
+        <path d="M41.899 49.5294L51.2204 40M51.2204 40L41.899 30.4706M51.2204 40C45.6966 40 33.4751 40 28.7799 40" stroke="#5D6357" stroke-width="2" stroke-linecap="round"/>
+      </svg>

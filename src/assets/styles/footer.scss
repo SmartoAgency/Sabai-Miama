@@ -76,9 +76,7 @@
     display: flex;
     flex-wrap: wrap;
     align-self: center;
-    .social-link~.social-link {
-      margin-left: 10px;
-    }
+    gap: 10px;
     
   }
   &__developer {

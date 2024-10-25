@@ -22,10 +22,19 @@
     }
     &__news-container-grid {
         @include row-flex();
+        .press-card,
         .news-card {
-            background-color: var(--color-gray-bg);
             @include size(2);
             @include shift(0);
+        }
+    }
+    &__button {
+        @include size(1);
+        @include shift-left(1);
+        @include shift-right(2);
+        margin-top: calc(var(--section-v-offset) / 2);
+        .button-30 {
+            width: max-content;
         }
     }
 }

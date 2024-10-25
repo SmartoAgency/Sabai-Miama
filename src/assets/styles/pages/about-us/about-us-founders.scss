@@ -58,5 +58,27 @@
         &-subtitle {
 
         }
+        &-description {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            padding: 20px;
+            width: 100%;
+            color: var(--color-white);
+            transition: opacity .35s ease-out;
+            opacity: 0;
+        }
+        @media (hover: hover) {
+            &-img::after {
+                transition: background .35s ease-out;
+            }
+            &:hover .about-us-founders__card-description {
+                opacity: 1;
+            }
+            &:hover &-img::after {
+                background: var(--color-dark);
+            }
+        }
     }
 }

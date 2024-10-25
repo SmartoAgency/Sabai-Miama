@@ -12,6 +12,7 @@
         @include size(4);
         @include shift(0);
     }
+
     &__title {
         @include size(2);
         @include shift(0);
@@ -24,11 +25,30 @@
         @include size(1);
         @include shift(0);
         text-align: right;
+        svg {
+            cursor: pointer;
+        }
+        svg~svg {
+            margin-left: 20px;
+        }
     }
     &__slide {
         padding-bottom: 100%;
         position: relative;
         overflow: hidden;
+        &:after {
+            content: '';
+            transition: opacity 0.3s;
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%);
+            opacity: 0;
+        }
         img {
             position: absolute;
             top: 0;
@@ -36,6 +56,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+    &__slide-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &-top {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+    }
+    @media (hover: hover) {
+        &__slider:hover .swiper-slide:not(:hover) :after {
+            opacity: 1;
         }
     }
 }

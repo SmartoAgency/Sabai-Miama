@@ -36,6 +36,9 @@
     &__more  {
         @include size(1);
         @include shift(0);
+        .button-30 {
+            margin-left: var(--grid-text-horisontal-padding);
+        }
     }
     &__more-image  {
         margin-bottom: 40px;

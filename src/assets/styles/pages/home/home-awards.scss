@@ -17,9 +17,20 @@
     &__accordeon-wrapper {
         background-color: var(--color-white);
         @include size(3);
-        @include shift-right(0);
-        @include shift-left(1);
+        @include shift(0);
         margin-bottom: 40px;
+    }
+    &__image  {
+        @include size(1);
+        @include shift(0);
+        padding: 45px;
+        background-color: var(--color-gray-bg);
+        height: max-content;
+        opacity: 0;
+        transition: opacity .25s ease-out;
+        &.active {
+            opacity: 1;
+        }
     }
     &__accordeon {
         @include row-flex();
@@ -28,6 +39,7 @@
         align-items: flex-start;
         border-top: 1px solid var(--gray-line, #E1E1E1);
         border-bottom: 1px solid var(--gray-line, #E1E1E1);
+        cursor: pointer;
         &-subtitle {
             @include size(1.35);
             @include shift(0);
@@ -42,11 +54,25 @@
             @include shift(0);
             text-align: right;
             cursor: pointer;
+            path,
+            rect {
+                transition: fill .25s ease-out;
+            }
         }
         &-content {
             @include size(4);
             padding-left: var(--grid-text-horisontal-padding);
             padding-right: var(--grid-text-horisontal-padding);
+        }
+        @media (hover: hover) {
+            &:hover {
+                .home-awards__accordeon-icon path {
+                    fill: var(--color-white);
+                }
+                .home-awards__accordeon-icon rect {
+                    fill: var(--color-accent-green);
+                }
+            }
         }
     }
     &__accordeon~&__accordeon  {
