@@ -11,7 +11,7 @@ import { useState } from './helpers/helpers';
  * form handlers start
  */
 const forms = [
-    '[data-form="top-form"]',
+    '[data-form]',
     '[data-form="bottom-form"]',
   ];
   console.log('ffff');
@@ -61,13 +61,6 @@ const forms = [
               valid: false,
               error: [],
             },
-            email: {
-              inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-email]') }),
-              rule: yup.string().required(i18next.t('required')).trim(),
-              defaultMessage: i18next.t('email'),
-              valid: false,
-              error: [],
-            },
   
             phone: {
               inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-phone]'), typeInput: 'phone' }),
@@ -95,12 +88,7 @@ useSetPopupEffect(({val, text}) => {
     gsap.timeline().to('[data-form-popup]', {
       autoAlpha: 1,
       pointerEvents: 'all'
-    })
-    .add(() => {  
-      document.body.style.overflow = 'hidden';
-    })
-    ;
-    document.querySelector('[data-form-popup] button[type="submit"] span').textContent = text;
+    });
     return;
   }
   gsap.timeline().to('[data-form-popup]', {

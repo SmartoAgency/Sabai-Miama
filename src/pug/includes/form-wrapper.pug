@@ -1,2 +1,33 @@
-.form-popup(data-form-popup data-lenis-prevent)
-    +form('top-form') 
+.form(data-form-popup data-lenis-prevent)
+    +screenGrid
+    .form__close(data-form-popup-close)
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="79" height="79" rx="39.5" stroke="white" stroke-opacity="0.2"/>
+            <path d="M34.3451 44.2426L38.5878 40L34.3451 35.7574L35.7594 34.3431L40.002 38.5858L44.2446 34.3431L45.6588 35.7574L41.4162 40L45.6588 44.2426L44.2446 45.6569L40.002 41.4142L35.7594 45.6569L34.3451 44.2426Z" fill="white"/>
+        </svg>
+    form.form__content(data-form)
+        .form__subtitle.g_grid-text-horisontal-padding.text-style-1920-subtitle.text-color-subtitle-gray Form
+        .form__title.g_grid-text-horisontal-padding.text-style-1920-h-2.text-color-white Reach out for a personalized consultation experience
+        .form__input.g_grid-text-horisontal-padding(data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-name")
+            .form__input-message(data-input-message="data-input-message").text-style-1920-navigation
+            label(for="form-popup-name").form__input-title.text-style-1920-subtitle.text-color-subtitle-gray Name
+            input(autocomplete="off" type="text", name="name" placeholder="name" id="form-popup-name").text-style-1920-navigation
+        .form__input.g_grid-text-horisontal-padding(data-status="field--inactive" data-field-input="data-field-input" data-lenis-prevent="data-lenis-prevent" data-field-phone="data-field-phone")
+            .form__input-message(data-input-message="data-input-message").text-style-1920-navigation
+            label(for="form-popup-phone").form__input-title.text-style-1920-subtitle.text-color-subtitle-gray Phone
+            input(autocomplete="off" type="text", name="phone" placeholder="phone" id="form-popup-phone").text-style-1920-navigation
+        .form__input.g_grid-text-horisontal-padding
+            .form__input-message(data-input-message="data-input-message").text-style-1920-navigation
+            label(for="form-popup-email").form__input-title.text-style-1920-subtitle.text-color-subtitle-gray Your email
+            input(autocomplete="off" type="text", name="email" placeholder="email" id="form-popup-email").text-style-1920-navigation
+        .form__input.g_grid-text-horisontal-padding
+            .form__input-message(data-input-message="data-input-message").text-style-1920-navigation
+            label(for="form-popup-message").form__input-title.text-style-1920-subtitle.text-color-subtitle-gray Comment
+            input(autocomplete="off" type="text", name="message" placeholder="message" id="form-popup-message").text-style-1920-navigation
+        .form__submit.g_grid-text-horisontal-padding
+            button(type="submit" data-btn-submit).button-30.button-30--body-dark
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="44" height="44" rx="22" fill="white"/>
+                    <path d="M29 22.998H23V28.998H21V22.998H15V20.998H21V14.998H23V20.998H29V22.998Z" fill="#1C1B20"/>
+                </svg>
+                span Send

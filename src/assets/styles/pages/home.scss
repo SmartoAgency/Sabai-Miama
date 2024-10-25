@@ -6,9 +6,6 @@
     position: relative;
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
-    @media screen and (orientation: landscape) and (max-width: 1024px){
-        height: 200vh;
-    }
 
     @include to(600px){
         height: calc(var(--vh, 1vh) * 100);
@@ -31,6 +28,9 @@
         // align-content: flex-start;
         height: 100%;
         padding-top: 250px;
+        @include to(1024px){
+            padding-top: calc(var(--header-h) + 40px);
+        }
     }
     &__text1 {
         @include size(3);
@@ -51,6 +51,10 @@
         height: max-content;
         margin-bottom: 40px;
         align-self: flex-end;
+        @include to(1024px){
+            @include size(4);
+            @include shift(0);
+        }   
         &-line {
             height: 2px;
             width: 100%;
@@ -85,11 +89,19 @@
     &__description {
         @include size(2);
         @include shift(0);
+        @include to(1024px){
+            @include size(3);
+            @include shift(0);
+        }
     }
     &__subtitle {
         @include size(1);
         @include shift-right(0);
         @include shift-left(1);
+        @include to(1024px){
+            @include size(1);
+            @include shift(0);
+        }
 
     }
     &__bg {
@@ -151,7 +163,6 @@
     &__content {
         @include row-flex();
         height: 100%;
-
     }
     &__item {
         @include size(1);
@@ -159,6 +170,15 @@
         height: 100%;
         border-left: 1px solid var(--color-gray-line);
         border-right: 1px solid var(--color-gray-line);
+    }
+    @include to(1024px){
+        &__item:nth-child(n+3) {
+            display: none;
+        }
+        &__item {
+            @include size(2);
+            @include shift(0);
+        }
     }
 }
 

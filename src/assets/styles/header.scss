@@ -17,6 +17,9 @@
 	@include to(1440px){
 		--logo-w: 260px;
 	}
+	@include to(1024px){
+		--logo-w: 140px;
+	}
 	@include from-to(1025px, 1439px){
 		--logo-w: 200px;
 		--v-padding: 10px;
@@ -35,26 +38,58 @@
 		display: flex;
 		margin-left: auto;
 		margin-right: pxWidthInVw(167);
-		&>:nth-child(n+2) {
-			margin-left: pxWidthInVw(40);
+		@include to(1024px){
+			position: fixed;
+			top: var(--header-h);
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: var(--color-dark);
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+			transition: .25s ease-out;
+		}
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+		@include from(1025px){
+			&>:nth-child(n+2) {
+				margin-left: pxWidthInVw(40);
+			}
 		}
 	}
 	&__link {
 		position: relative;
-		&.active:after {
-			content: '';
-			position: absolute;
-			left: 0;
-			bottom: calc(-1 * (var(--v-padding) + 17px));
-			height: 3px;
-			width: 100%;
-			border-radius: 2px;
-			background-color: var(--color-white);
+		@include to(1024px){
+			@include text-style-1920-h-2;
+			margin-bottom: 20px;
+		}
+		@include from(1025px){
+			&.active:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: calc(-1 * (var(--v-padding) + 17px));
+				height: 3px;
+				width: 100%;
+				border-radius: 2px;
+				background-color: var(--color-white);
+			}
 		}
 	}
 	&__logo {
 		width: var(--logo-w);
 		height: calc(var(--logo-w) / 325 * 28);
+		@include to(1024px){
+			height: calc(var(--logo-w) / 140 * 54);
+		}
 		svg {
 			width: 100%;
 			height: 100%;
@@ -62,6 +97,9 @@
 	}
 	.button-30 {
 		margin-right: pxWidthInVw(40);
+		@include to(1024px){
+			margin-left: auto;
+		}
 	}
 	&__link2 {
 		font-size: 20px;
@@ -71,6 +109,12 @@
 		line-height: 120%; /* 24px */
 		text-decoration: none;
 		position: relative;
+		@media screen and (max-width:1024px){
+			@include text-style-768-body;
+		}
+		@media screen and (max-width:600px){
+			@include text-style-360-body;
+		}
 		&::after {
 			content: '';
 			position: absolute;
@@ -86,6 +130,13 @@
 		&:hover::after {
 			transform: scaleX(1);
 		}
+	}
+	&__menu-call {
+		cursor: pointer;
+		@include from(1025px){
+			display: none;
+		}
+		margin-left: 20px;
 	}
 }
 

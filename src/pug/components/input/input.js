@@ -115,7 +115,7 @@ export default class SexyInput {
       /* eslint-disable */
       input.setAttribute('inputmode', 'tel');
       input.intTelIput = intlTelInput(input, {
-        preferredCountries: ['us' ,'ua', 'pl', 'ca', 'se', 'it', 'es','fr', 'tr', 'de', 'gb'],
+        preferredCountries: ['us', 'ca' ],
         defaultCountry: 'us',
         excludeCountries: ['ru'],
         autoPlaceholder: 'off',
