@@ -38,11 +38,20 @@
         @include size(2);
         @include shift-left(0);
         @include shift-right(2);
+        @include to(1024px){
+            @include size(3);
+            @include shift(0);
+        }
     }
     &__title2 {
         @include size(2);
         @include shift-right(0);
         @include shift-left(2);
+        @include to(1024px){
+            @include size(3);
+            @include shift-left(1);
+            text-align: right;
+        }
         margin-top: auto;
 
     }

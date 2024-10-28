@@ -9,27 +9,46 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
         margin-bottom: 40px;
+        @include to(1024px){
+            @include size(4);
+            margin-bottom: 20px;
+        }
         
     }
     &__text1 {
         @include size(1);
         @include shift-right(0);
         @include shift-left(2);
+        @include to(1024px){
+            @include size(2);
+            @include shift(0);
+        }
     }
     &__text2 {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            @include size(2);
+            @include shift(0);
+        }
     }
     &__items {
         @include size(3);
         @include shift-right(0);
         @include shift-left(1);
         margin-top: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(4);
+            @include shift(0);  
+        }
     }
     &__item {
         &-icon {
@@ -64,6 +83,14 @@
         align-items: center;
         justify-content: flex-start;
         margin-top: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(2);
+            @include shift-left(2);
+            svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
         &>:nth-child(n+2) {
             margin-left: 20px;
         }

@@ -16,6 +16,10 @@
     &__title {
         @include size(2);
         @include shift(0);
+        @include to(1024px){
+            order: -1;
+            margin-bottom: calc(var(--section-v-offset) / 2);
+        }
     }
     &__description {
         @include size(1);
@@ -25,8 +29,17 @@
         @include size(1);
         @include shift(0);
         text-align: right;
+        @include to(1024px){
+            @include size(2);
+            @include shift-left(2);
+            text-align: left;
+        }
         svg {
             cursor: pointer;
+            @include to(1024px){
+                width: 60px;
+                height: 60px;
+            }
         }
         svg~svg {
             margin-left: 20px;
@@ -63,6 +76,9 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        @include to(1024px){
+            display: none;
+        }
         &-top {
             display: flex;
             align-items: center;

@@ -10,11 +10,17 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
-        margin-bottom: 100px;
+        margin-bottom: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(4);
+        }
     }
     &__item {
         @include size(1);
@@ -22,6 +28,10 @@
         background-color: var(--color-white);
         padding: 80px;
         text-align: center;
+        @include to(1024px){
+            padding: 40px;
+            width: auto;
+        }
         img {
             height: 48px;
             width: auto;

@@ -68,6 +68,14 @@ function ourProcessSlider() {
     const slider = new Swiper('[data-home-process-slider]', {
         modules: [Navigation],
         slidesPerView: 3,
+        breakpoints: {
+            768: {
+                slidesPerView: 2.2,
+            },
+            1025: {
+                slidesPerView: 3,
+            },
+        },
         spaceBetween: 20,
         navigation: {
             nextEl: '[data-home-process-slider-next]',
@@ -82,6 +90,14 @@ function companyProjectsSlider() {
     const slider = new Swiper('[data-home-company-projects-slider]', {
         modules: [Navigation],
         slidesPerView: 4.5,
+        breakpoints: {
+            768: {
+                slidesPerView: 2.2,
+            },
+            1025: {
+                slidesPerView: 4.5,
+            },
+        },
         spaceBetween: 20,
         navigation: {
             nextEl: '[data-home-company-projects-slider-next]',

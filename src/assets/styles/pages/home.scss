@@ -29,13 +29,16 @@
         height: 100%;
         padding-top: 250px;
         @include to(1024px){
-            padding-top: calc(var(--header-h) + 40px);
+            padding-top: calc(var(--header-h) + 60px);
         }
     }
     &__text1 {
         @include size(3);
         @include shift(0);
         margin-bottom: auto;
+        @include to(1024px){
+            @include size(4);
+        }
     }
     &__slider-lines-wrapper {
         display: flex;
