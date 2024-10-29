@@ -63,7 +63,6 @@
             display: flex;
             align-items: flex-start;
             flex-wrap: wrap;
-
         }
         .button-30 {
             margin-left: var(--grid-text-horisontal-padding);
@@ -81,8 +80,12 @@
     }
     &__more-text  {
         margin-bottom: 40px;
-        @include to(1024px){
+        @include from-to(601px, 1024px){
             width: 50%;
+        }
+        @include to(600px){
+            width: 100%;
+            margin-bottom: 24px;
         }
     }
 }

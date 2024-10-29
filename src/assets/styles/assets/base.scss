@@ -290,3 +290,22 @@ input[type=number]::-webkit-outer-spin-button {
 	opacity: 0.5;
 	pointer-events: none;
 }
+
+@include to(600px){
+	[class*="__content"]>[class*="__subtitle"] {
+		@include size(4);
+	}
+	[class*="__content"]>[class*="__title"] {
+		margin-bottom: 24px;
+	}
+	[class*="__content"]>[class*="__description2"],
+	[class*="__content"]>[class*="__description1"],
+	[class*="__content"]>[class*="__text2"],
+	[class*="__content"]>[class*="__text1"] {
+		@include size(4);
+	}
+
+	[class*="__content"]>[class*="__description1"] {
+		margin-bottom: 20px;
+	}
+}

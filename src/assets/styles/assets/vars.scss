@@ -360,11 +360,13 @@ $dark: $color-dark;
 
 @media screen and (max-width: 600px) {
 	:root {
-		--header-h: 60px;
+		--header-h: 80px;
 		--sliceFigure: 100px;
 		--sliceFigure-big: 100px;
-		--page-side-fields: 20px;
+		--page-side-fields: 10px;
 		--logo-w: 97px;
+		--grid-text-horisontal-padding: 8px;
+		--section-v-offset: 60px;
 	}
 }
 
@@ -372,7 +374,7 @@ $dark: $color-dark;
 .tablet {
 	--page-side-fields: 20px;
 	--section-v-offset: 120px;
-	--header-h: 80px;
+	// --header-h: 80px;
 
 	.page__inner {
 		max-width: 100vw;

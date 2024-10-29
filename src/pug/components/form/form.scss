@@ -13,6 +13,10 @@
 
   overflow-y: auto;
   max-height: 100vh;
+  @include to(600px){
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
 
   &.active {
     opacity: 1;
@@ -30,6 +34,17 @@
     width: 80px;
     height: 80px;
     cursor: pointer;
+    @include to(1024px){
+      width: 60px;
+      height: 60px;
+      right: calc(var(--page-side-fields) + 20px);
+    }
+    @include to(600px){
+      width: 48px;
+      height: 48px;
+      top: 16px;
+      right: 24px;
+    }
     svg {
       width: 100%;
       height: 100%;
@@ -56,7 +71,11 @@
       font-size: 60px;
       @include size(4);
       @include shift(0);
-
+      margin-bottom: 20px;
+    }
+    @include to(600px){
+      @include text-style-360-h-2;
+      margin-bottom: 12px;
     }
   }
   &__submit {
@@ -64,6 +83,18 @@
     @include shift-left(1);
     @include shift-right(2);
     margin-top: pxInVh(100);
+    @include to(1024px){
+      margin-top: 60px;
+      @include size(2);
+      @include shift-left(2.1);
+      @include shift-right(0);
+    }
+    @include to(600px){
+      margin-top: 24px;
+      @include size(2);
+      @include shift-left(0.1);
+      @include shift-right(0);
+    }
   }
   &__input {
     @include size(2);
@@ -78,6 +109,15 @@
     justify-content: center;
     cursor: pointer;
     position: relative;
+    @include to(1024px){
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @include to(600px){
+      @include size(4);
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
     &-title {
       margin-bottom: 10px;
     }
@@ -86,14 +126,29 @@
       right: 20px;
       top: pxInVh(40);
       color: red;
+      @include to(1024px){
+        top: 40px;
+        font-size: 12px !important; 
+      }
     }
     input {
       background-color: transparent;
       color: var(--color-white);
       border: none;
     }
+    .text-style-1920-navigation {
+      @include from-to(601px, 1024px){
+        @include text-style-768-h-5;
+      }
+      @include to(600px){
+        @include text-style-360-h-5;
+      }
+    }
   }
   &__input:focus-within {
     background-color: var(--color-accent-green);
+  }
+  [data-btn-submit-text] {
+    display: none;
   }
 }

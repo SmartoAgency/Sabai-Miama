@@ -7,7 +7,7 @@
         </svg>
     form.form__content(data-form)
         .form__subtitle.g_grid-text-horisontal-padding.text-style-1920-subtitle.text-color-subtitle-gray Form
-        .form__title.g_grid-text-horisontal-padding.text-style-1920-h-2.text-color-white Reach out for a personalized consultation experience
+        .form__title.g_grid-text-horisontal-padding.text-style-1920-h-2.text-color-white(data-form-sucess-message data-default="Reach out for a personalized consultation experience" data-success="Thank you for your request. We will contact you shortly") Reach out for a personalized consultation experience
         .form__input.g_grid-text-horisontal-padding(data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-name")
             .form__input-message(data-input-message="data-input-message").text-style-1920-navigation
             label(for="form-popup-name").form__input-title.text-style-1920-subtitle.text-color-subtitle-gray Name
@@ -31,3 +31,4 @@
                     <path d="M29 22.998H23V28.998H21V22.998H15V20.998H21V14.998H23V20.998H29V22.998Z" fill="#1C1B20"/>
                 </svg>
                 span Send
+                span(data-btn-submit-text)

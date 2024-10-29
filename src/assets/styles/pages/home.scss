@@ -31,6 +31,9 @@
         @include to(1024px){
             padding-top: calc(var(--header-h) + 60px);
         }
+        @include to(600px){
+            padding-top: calc(var(--header-h) + 21px);
+        }
     }
     &__text1 {
         @include size(3);
@@ -57,7 +60,11 @@
         @include to(1024px){
             @include size(4);
             @include shift(0);
-        }   
+        }
+        @include to(600px){
+            margin-bottom: 0;
+            margin-top: auto;
+        }
         &-line {
             height: 2px;
             width: 100%;
@@ -96,6 +103,10 @@
             @include size(3);
             @include shift(0);
         }
+        @include to(600px){
+            @include size(4);
+            @include shift(0);
+        }
     }
     &__subtitle {
         @include size(1);
@@ -104,6 +115,14 @@
         @include to(1024px){
             @include size(1);
             @include shift(0);
+        }
+        @include to(600px){
+            @include size(4);
+            @include shift(0);
+            height: max-content;
+            margin-top: 20px;
+            margin-bottom: 6px;
+            align-self: flex-end;
         }
 
     }
@@ -142,6 +161,9 @@
         width: 80px;
         height: 80px;
         z-index: 20;
+        @include to(1024px){
+            display: none;
+        }
     }
 }
 
@@ -174,12 +196,21 @@
         border-left: 1px solid var(--color-gray-line);
         border-right: 1px solid var(--color-gray-line);
     }
-    @include to(1024px){
+    @include from-to(601px, 1024px){
         &__item:nth-child(n+3) {
             display: none;
         }
         &__item {
             @include size(2);
+            @include shift(0);
+        }
+    }
+    @include to(600px){
+        &__item:nth-child(n+3) {
+            display: none;
+        }
+        &__item {
+            @include size(4);
             @include shift(0);
         }
     }

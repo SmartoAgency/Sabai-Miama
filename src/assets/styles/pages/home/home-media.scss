@@ -32,6 +32,9 @@
             padding: 40px;
             width: auto;
         }
+        @include to(600px){
+            padding: 16px;
+        }
         img {
             height: 48px;
             width: auto;

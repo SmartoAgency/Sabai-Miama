@@ -24,33 +24,25 @@ const forms = [
         elements: {
           $form,
           successAction: () => { 
-            $form.insertAdjacentHTML('beforeend', `
-              <div data-success style="
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: var(--color-white);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                z-index: 2;
-              ">
-              
-                <div style="text-align: center; margin-bottom: 10px"  class="text-style-h-1 text-new-blue text-uppercase">
-                  Заявка успішно відправлена
-                </div>
-                <button data-form-popup-close type="button" onclick="this.closest('[data-success]').remove()" class="button-30 button-30--blue">Закрити</button>
-              
-              </div>
-            
-            `);
-            
-            setTimeout(() => {
-                $form.querySelector('[data-success]').remove();
-            }, 6000);
+
+            const title = $form.querySelector('[data-form-sucess-message]');
+            gsap.timeline()
+              .to($form.children, {
+                opacity: 0,
+              })
+              .set(title, {
+                textContent: title.dataset.success,
+              })
+              .to(title, {
+                opacity: 1,
+              })
+
+              setTimeout(() => {
+                gsap.to($form.children, {
+                  opacity: 1,
+                });
+                title.textContent = title.dataset.default;
+              }, 6000);
           },
           $btnSubmit: $form.querySelector('[data-btn-submit]'),
           fields: {
@@ -109,7 +101,7 @@ document.body.addEventListener('click', (evt) => {
   
   setFormPopup({
     val: true,
-    text: target.querySelector('span').textContent
+    // text: target.querySelector('span').textContent
   });
 })
 document.body.addEventListener('click', (evt) => {
@@ -117,6 +109,6 @@ document.body.addEventListener('click', (evt) => {
   if (!target) return;
   setFormPopup({
     val: false,
-    text: ''
+    // text: ''
   });
 })

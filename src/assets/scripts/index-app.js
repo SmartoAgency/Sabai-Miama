@@ -38,10 +38,6 @@ var headroom  = new Headroom(myElement);
 headroom.init();
 
 
-
-// paralaxesScreens('desktop', gsap);
-// splitToLinesAndFadeUp('.text-style-1920-h-1, .text-style-1920-h-2', gsap);
-
 document.body.addEventListener('click',function(evt){
   const target = evt.target.closest('[data-call-form]');
   if (!target) return;
@@ -99,14 +95,23 @@ document.body.addEventListener('click',function(evt){
 
 
 menu();
-
-
-
-
 splitToLinesAndFadeUp('section:not(.section-1) .text-style-h-1, section  .text-style-h-3');
-
-
-
-
-
 splitToLinesAndFadeUp('.text-style-h-1');
+
+
+function mobileCallbackPopup() {
+  document.body.addEventListener('click',function(evt){
+    const target = evt.target.closest('[data-mobile-callback-popup-call]');
+    if (!target) return;
+    document.querySelector('.header').classList.add('js-mobile-callback-opened');
+    document.querySelector('[data-mobile-callback-popup]').classList.add('active');
+  });
+  document.body.addEventListener('click',function(evt){
+    const target = evt.target.closest('[data-mobile-callback-close]');
+    if (!target) return;
+    document.querySelector('.header').classList.remove('js-mobile-callback-opened');
+    document.querySelector('[data-mobile-callback-popup]').classList.remove('active');
+  });
+}
+
+mobileCallbackPopup();
