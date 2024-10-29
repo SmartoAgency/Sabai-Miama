@@ -10,20 +10,34 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
         margin-bottom: 40px;
+        @include to(1024px){
+            @include size(4);
+        }
     }
     &__text1 {
         @include size(1);
         @include shift-left(2);
         @include shift-right(0);
+        @include to(1024px){
+            @include size(2);
+            @include shift(0);
+        }
     }
     &__text2 {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            @include size(2);
+            @include shift(0);
+        }
     }
     &__item {
         @include size(1);
@@ -31,6 +45,10 @@
         margin-top: calc(var(--section-v-offset) / 2);
         position: relative;
         overflow: hidden;
+        @include to(1024px){
+            @include size(1.8);
+            @include shift(0.1);
+        }
 
         &-inner {
             border-radius: 50%;
@@ -45,6 +63,9 @@
             margin-left: auto;
             margin-right: auto;
             overflow: hidden;
+            @include to(1024px){
+                padding: 10.9vw;
+            }
         }
         &-hover {
             position: absolute;

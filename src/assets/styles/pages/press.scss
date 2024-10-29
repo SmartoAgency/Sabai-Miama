@@ -6,6 +6,11 @@
         @include shift-left(1);
         @include shift-right(2);
         margin-top: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(2);
+            @include shift-right(0);
+            @include shift-left(2.1);
+        }
     }
     &__content {
         @include row-flex;
@@ -14,6 +19,9 @@
         @include size(2);
         @include shift(0);
         margin-bottom: 20px;
+        @include to(1024px){
+            @include size(4);
+        }
     }
 }
 

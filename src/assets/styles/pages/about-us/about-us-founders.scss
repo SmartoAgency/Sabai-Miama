@@ -10,16 +10,26 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
         margin-bottom: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(4);
+        }
     }
     &__card {
         @include size(2);
         @include shift(0);
         position: relative;
+        @include to(1024px){
+            @include size(4);
+            margin-bottom: 20px;
+        }
         &-content {
             position: absolute;
             left: 20px;
@@ -33,6 +43,9 @@
         &-img {
             padding-bottom: 77%;
             position: relative;
+            @include to(1024px){
+                padding-bottom: 62.06%;
+            }
             &:after {
                 content: '';
                 position: absolute;
@@ -50,6 +63,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                object-position: top;
             }
         }
         &-title {
@@ -69,6 +83,16 @@
             transition: opacity .35s ease-out;
             opacity: 0;
         }
+        &-open-info-icon {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 3;
+            @include to(1024px){
+                display: block;
+            }
+        }
         @media (hover: hover) {
             &-img::after {
                 transition: background .35s ease-out;
@@ -79,6 +103,20 @@
             &:hover &-img::after {
                 background: var(--color-dark);
             }
+        }
+        &.active {
+            &-img::after {
+                transition: background .35s ease-out;
+            }
+        }
+        &.active .about-us-founders__card-description {
+            opacity: 1;
+        }
+        &.active &-open-info-icon {
+            opacity: 0;
+        }
+        &.active &-img::after {
+            background: var(--color-dark);
         }
     }
 }

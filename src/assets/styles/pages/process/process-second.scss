@@ -10,22 +10,37 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
-        margin-bottom: 40px
+        margin-bottom: 40px;
+        @include to(1024px){
+            @include size(4);
+            margin-bottom: 20px;
+        }
     }
     &__text1 {
         @include size(1);
         @include shift-left(2);
         @include shift-right(0);
         margin-bottom: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(2);
+            @include shift(0);
+        }
     }
     &__text2 {
         @include size(1);
         @include shift(0);
         margin-bottom: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(2);
+            @include shift(0);
+        }
     }
     &__item {
         height: 490px;
@@ -39,8 +54,14 @@
         justify-content: space-between;
         cursor: pointer;
         transition: .25s ease-out;
+        @include to(1024px){
+            @include size(2);
+            height: 380px;
+        }
         &:nth-child(3n-1) {
-            @include shift-left(1);
+            @include from(1025px){
+                @include shift-left(1);
+            }
         }
         &-title {
 
@@ -56,6 +77,32 @@
                 background-color: var(--color-dark);
                 color: var(--color-white);
             }
+        }
+    }
+    @include to(1024px){
+        &__content>&__item {
+            display: none;
+        }
+    }
+    &__not-desktop-slider {
+        @include from(1025px){
+            display: none;
+        }
+    }
+    &__not-desktop-slider &__item {
+        @include size(4);
+    }
+    &__not-desktop-nav {
+        @include size(2);
+        @include shift-left(2.1);
+        @include shift-right(0);
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 20px;
+        @include from(1025px){
+            display: none;
         }
     }
 }

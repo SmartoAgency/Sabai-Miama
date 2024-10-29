@@ -9,10 +9,23 @@
     &__title {
         @include size(2);
         @include shift(0);
+        @include to(1024px){
+            @include size(4);
+            margin-bottom: 40px;
+        }
     }
     &__text {
         @include size(2);
         @include shift(0);
+        @include to(1024px){
+            @include size(4);
+            &>:first-child {
+                margin-bottom: 20px;
+            }
+            p~p {
+                margin-top: 10px;
+            }
+        }
     }
     &__slider {
         @include size(4);
@@ -30,5 +43,14 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+    &__not-desktop-nav {
+        @include from(1025px){
+            display: none;
+        }
+        @include size(2);
+        @include shift-right(0);
+        @include shift-left(2.1);
+        margin-top: calc(var(--section-v-offset) / 2);
     }
 }

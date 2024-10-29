@@ -9,15 +9,25 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
         margin-bottom: 40px;
+        @include to(1024px){
+            @include size(4);
+        }
     }
     &__slider {
         @include size(2);
         @include shift(0);
+        @include to(1024px){
+            @include size(4);
+            order: 4;
+        }
     }
     &__slide {
         padding: 40px;
@@ -29,6 +39,9 @@
         grid-template-areas: 
             "date img"
             "text text"; 
+        @include to(1024px){
+            grid-template-rows: auto auto;
+        }
         &-number {
             grid-area: date;
         }
@@ -56,17 +69,31 @@
     &__image {
         @include size(2);
         @include shift(0);
+        @include to(1024px){
+            @include size(4);
+            padding: 40px;
+            background-color: var(--color-gray-bg);
+        }
     }
     &__navigation {
         @include size(1);
         @include shift-left(1);
         @include shift-right(0);
         margin-top: calc(var(--section-v-offset)  / 2);
+        @include to(1024px){
+            order: 5;
+            @include size(2);
+            @include shift-left(2);
+        }
         &>:nth-child(n+2) {
             margin-left: 20px;
         }
         svg {
             cursor: pointer;
+            @include to(1024px){
+                width: 60px;
+                height: 60px;
+            }
         }
     }
 }

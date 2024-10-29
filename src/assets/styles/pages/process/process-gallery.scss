@@ -10,21 +10,35 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
         margin-bottom: 40px;
+        @include to(1024px){
+            @include size(4);
+        }
     }
     &__text1 {
         @include size(1);
         @include shift-right(0);
         @include shift-left(2);
+        @include to(1024px){
+            @include shift(0);
+            @include size(2);
+        }   
         
     }
     &__text2 {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            @include shift(0);
+            @include size(2);
+        }   
 
     }
     &__slider {
@@ -42,6 +56,18 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+    &__not-desktop-nav {
+        @include from(1025px){
+            display: none;
+        }
+        margin-top: calc(var(--section-v-offset) / 2);
+        @include size(2);
+        @include shift-right(0);
+        @include shift-left(2.1);
+        svg~svg {
+            margin-left: 20px;
         }
     }
 }

@@ -6,42 +6,55 @@
         row-gap: calc(var(--section-v-offset) / 2);
     }
     //every eights .projects-card
-    .projects-card:nth-child(9n-8) {
-        @include size(1);
-        @include shift(0);
+    @include from(1025px){
+        .projects-card:nth-child(9n-8) {
+            @include size(1);
+            @include shift(0);
+        }
+        .projects-card:nth-child(9n-7) {
+            @include size(1);
+            @include shift(0);
+        }
+        .projects-card:nth-child(9n-6) {
+            @include size(2);
+            @include shift(0);
+        }
+        .projects-card:nth-child(9n-5) {
+            @include size(2);
+            @include shift-left(0);
+            @include shift-right(1);
+        }
+        .projects-card:nth-child(9n-4) {
+            @include size(1);
+            @include shift(0);
+        }
+        .projects-card:nth-child(9n-3) {
+            @include size(1);
+            @include shift-left(0);
+            @include shift-right(1);
+        }
+        .projects-card:nth-child(9n-1),
+        .projects-card:nth-child(9n-2) {
+            @include size(1);
+            @include shift(0);
+        }
     }
-    .projects-card:nth-child(9n-7) {
-        @include size(1);
-        @include shift(0);
-    }
-    .projects-card:nth-child(9n-6) {
-        @include size(2);
-        @include shift(0);
-    }
-    .projects-card:nth-child(9n-5) {
-        @include size(2);
-        @include shift-left(0);
-        @include shift-right(1);
-    }
-    .projects-card:nth-child(9n-4) {
-        @include size(1);
-        @include shift(0);
-    }
-    .projects-card:nth-child(9n-3) {
-        @include size(1);
-        @include shift-left(0);
-        @include shift-right(1);
-    }
-    .projects-card:nth-child(9n-1),
-    .projects-card:nth-child(9n-2) {
-        @include size(1);
-        @include shift(0);
+    @include to(1024px){
+        .projects-card {
+            @include size(2);
+            @include shift(0);
+        }
     }
     
     &__button {
         @include size(1);
         @include shift-left(1);
         @include shift-right(2);
+        @include to(1024px){
+            @include size(2);
+            @include shift-right(0);
+            @include shift-left(2.1);
+        }
     }
 
 }

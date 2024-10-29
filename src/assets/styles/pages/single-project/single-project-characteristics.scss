@@ -7,11 +7,17 @@
     &__subtitle {
         @include size(1);
         @include shift(0);
+        @include to(1024px){
+            margin-bottom: 15px;
+        }
     }
     &__title {
         @include size(3);
         @include shift(0);
         margin-bottom: calc(var(--section-v-offset) / 2);
+        @include to(1024px){
+            @include size(4);
+        }
     }
     &__item {
         @include size(1);
@@ -20,9 +26,15 @@
         text-align: center;
         background-color: var(--color-gray-bg);
         margin-bottom: 20px;
+        @include to(1024px){
+            @include size(2);
+        }
         &-icon {
             text-align: center;
             margin-bottom: 40px;
+            @include to(1024px){
+                margin-bottom: 20px;
+            }
             img {
                 width: 100px;
                 height: auto;

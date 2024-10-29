@@ -19,6 +19,7 @@
 	}
 	@include to(1024px){
 		--logo-w: 140px;
+		height: var(--header-h);
 	}
 	@include from-to(1025px, 1439px){
 		--logo-w: 200px;

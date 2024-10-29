@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 import $ from 'jquery';
 
 function processAccordeons() {
@@ -22,9 +22,36 @@ processAccordeons();
 
 function processSwipers() {
     const processSwiper = new Swiper('[data-process-gallery-slider]', {
+        modules: [Navigation],
         slidesPerView: 2.5,
         spaceBetween: 20,
+        navigation: {
+            nextEl: '[data-process-gallery-slider-next]',
+            prevEl: '[data-process-gallery-slider-prev]',
+        },
+        breakpoints: {
+            360: {
+                slidesPerView: 1.75,
+            },
+            1025: {
+                slidesPerView: 2.5,
+            },
+        },
     });
 }
 
 processSwipers();
+
+
+function processNotDesktopSlider() {
+    const swiper = new Swiper('[data-process-second-slider]', {
+        modules: [Navigation],
+        slidesPerView: 2.05,
+        navigation: {
+            nextEl: '[data-process-second-slider-next]',
+            prevEl: '[data-process-second-slider-prev]',
+        },
+    })
+}
+
+processNotDesktopSlider();
