@@ -6,6 +6,9 @@
     padding-bottom: calc(var(--section-v-offset) / 2);
     width: 100vw;
     height: 100vh;
+    @include to(600px){
+        height: calc(var(--vh, 1vh) * 100 - var(--header-h));
+    }
 
     &__bg {
         position: absolute;
@@ -51,6 +54,9 @@
             @include size(3);
             @include shift-left(1);
             text-align: right;
+        }
+        @include to(600px){
+            margin-bottom: 0 !important;
         }
         margin-top: auto;
 

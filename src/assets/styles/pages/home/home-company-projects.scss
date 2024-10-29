@@ -11,6 +11,9 @@
         margin-bottom: calc(var(--section-v-offset) / 2);
         @include size(4);
         @include shift(0);
+        @include to(600px){
+            overflow: visible
+        }
     }
 
     &__title {
@@ -34,15 +37,32 @@
             @include shift-left(2);
             text-align: left;
         }
+        @include to(600px){
+            @include size(4);
+            @include shift-left(0.1);
+            text-align: left;
+        }
         svg {
             cursor: pointer;
             @include to(1024px){
                 width: 60px;
                 height: 60px;
             }
+            @include to(600px){
+                width: 48px;
+                height: 48px;
+                path {
+                    transform-origin: center;
+                    transform-box: fill-box;
+                    transform: scale(1.5);
+                }
+            }
         }
         svg~svg {
             margin-left: 20px;
+            @include to(600px){
+                margin-left: 12px;
+            }
         }
     }
     &__slide {

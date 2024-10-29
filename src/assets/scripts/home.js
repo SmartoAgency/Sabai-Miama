@@ -69,6 +69,9 @@ function ourProcessSlider() {
         modules: [Navigation],
         slidesPerView: 3,
         breakpoints: {
+            320: {
+                slidesPerView: 1.2,
+            },
             768: {
                 slidesPerView: 2.2,
             },
@@ -91,6 +94,10 @@ function companyProjectsSlider() {
         modules: [Navigation],
         slidesPerView: 4.5,
         breakpoints: {
+            320: {
+                slidesPerView: 1.5,
+                spaceBetween: 8,
+            },
             768: {
                 slidesPerView: 2.2,
             },
