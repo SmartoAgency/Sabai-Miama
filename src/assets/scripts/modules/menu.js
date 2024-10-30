@@ -8,6 +8,7 @@ export default function menu() {
       target.classList.toggle('opened-menu');
       document.querySelectorAll('[data-not-desktop-menu]').forEach((item) => {
         item.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
       });
     }) 
 }

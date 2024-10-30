@@ -68,6 +68,7 @@
         }
         .button-30 {
             margin-left: var(--grid-text-horisontal-padding);
+            width: max-content;
             @include to(1024px){
                 width: auto;
             }

@@ -122,7 +122,7 @@ function homeAwardsAccordeon() {
             image.querySelector('img').src = el.dataset.img;
             image.classList.add('active');
             image.style.transform = '';
-            alignImageByAccordeon(el, image);
+            alignImageByAccordeon(document.querySelectorAll('[data-home-accordeon]')[0], image);
         });
     });
 }
@@ -182,4 +182,39 @@ applyScrollTriggerAnimation('.press-card, .home-our-process__item');
 
 
 splitToLinesAndFadeUp('.home-about-us__title , .home-awards__title , .home-media__title , .home-press__title , .home-our-process__title , .home-with-render-block__title , .home-company-projects__title', gsap)
-splitToLinesAndFadeUp('.home-with-render-block__title1, .home-with-render-block__title2', gsap)
+splitToLinesAndFadeUp('.home-with-render-block__title1, .home-with-render-block__title2', gsap);
+
+
+
+function frontScreenSlider() {
+    const duration = 5000;
+    const slider = new Swiper('[data-home-slider]', {
+        modules: [Navigation, Autoplay, EffectFade],
+        slidesPerView: 1,
+        speed: 750,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        autoplay: {
+            delay: duration,
+        },
+        on: {
+            init: function () {
+                document.documentElement.style.setProperty('--home-slide-line-duration', `${duration/1000}s`);
+                document.querySelectorAll('[data-home-slider-line]')[0].classList.add('active');
+            },
+            slideChange: function () {
+                const slide = document.querySelector('.active[data-home-slider-line]');
+                if (slide) {
+                    slide.classList.remove('active');
+                }
+                document.querySelectorAll('[data-home-slider-line]')[this.activeIndex].classList.add('active');
+            }
+        },
+    });
+    //data-home-slider-line
+}
+
+
+frontScreenSlider();

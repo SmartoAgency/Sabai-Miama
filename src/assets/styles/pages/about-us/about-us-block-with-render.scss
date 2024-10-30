@@ -52,6 +52,9 @@
             transform: translate(-50%,-50%);
             transition: opacity 0.3s ease-out;
         }
+        @include from(1025px){
+            opacity: 1 !important;
+        }
         @include to(600px){
             @include size(3.6);
             @include shift(0);

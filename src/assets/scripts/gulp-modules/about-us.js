@@ -1,16 +1,22 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Controller } from 'swiper';
 import { useState } from '../modules/helpers/helpers';
 
+const recognition2 = new Swiper('[data-about-us-recognition-slider2]', {
+    modules: [Controller],
+    slidesPerView: 1,
+});
 
-const slider = new Swiper('[data-about-us-recognition-slider]', {
-    modules: [Navigation],
+const recognition1 = new Swiper('[data-about-us-recognition-slider]', {
+    modules: [Navigation, Controller],
     slidesPerView: 1,
     navigation: {
         nextEl: '[data-about-us-recognition-slider-next]',
         prevEl: '[data-about-us-recognition-slider-prev]',
     },
-
 });
+recognition2.controller.control = recognition1;
+recognition1.controller.control = recognition2;
+
 
 
 function blockWithRenderNotDesktopSlider() {
@@ -19,7 +25,7 @@ function blockWithRenderNotDesktopSlider() {
     subscribeCurrentIndex(index => {
         slides.forEach(el => {
             const slideNumber =  el.getAttribute('data-about-us-block-with-render-slide')
-            el.style.zIndex = slideNumber == index ? 1 : 0;
+            el.style.zIndex = slideNumber == index ? 2 : 1;
             el.style.opacity = slideNumber == index ? 1 : 0;
         })
     });

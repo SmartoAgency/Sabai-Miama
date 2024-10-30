@@ -7,16 +7,23 @@
     div.text-style-1920-h-1.text-color-white.home-front-screen__text1 Creating dreams that come true in Miami
     .home-front-screen__slider
       .home-front-screen__slider-lines-wrapper
-        .home-front-screen__slider-line
+        .home-front-screen__slider-line(data-home-slider-line)
           .home-front-screen__slider-line-item
           .home-front-screen__slider-line-bg
-        .home-front-screen__slider-line
+        .home-front-screen__slider-line(data-home-slider-line)
           .home-front-screen__slider-line-item
           .home-front-screen__slider-line-bg
-        .home-front-screen__slider-line
+        .home-front-screen__slider-line(data-home-slider-line)
           .home-front-screen__slider-line-item
           .home-front-screen__slider-line-bg
     div.home-front-screen__subtitle.text-style-1920-h-4.text-color-white Adams Ave
     div.home-front-screen__description.text-style-1920-h-5.text-color-white A hotel in the heart of Miami offering comfort and style for every guest. Ideally located close to the most popular beaches and attractions. A hotel in the heart of Miami offering comfort and style for every guest. Ideally located close to the most popular beaches and attractions.
   .home-front-screen__bg
-    img(src="./assets/images/home/home-front-screen/home-front-screen-bg.jpg" alt="home-front-screen-bg" loading="lazy")
+    .swiper-container(data-home-slider)
+      .swiper-wrapper
+        .swiper-slide
+          img(loading="lazy" src="./assets/images/home/home-front-screen/home-front-screen-bg.jpg" alt="home-front-screen-bg")
+        .swiper-slide
+          img(loading="lazy" src="./assets/images/home/home-front-screen/home-front-screen-bg.jpg" alt="home-front-screen-bg")
+        .swiper-slide
+          img(loading="lazy" src="./assets/images/home/home-front-screen/home-front-screen-bg.jpg" alt="home-front-screen-bg")

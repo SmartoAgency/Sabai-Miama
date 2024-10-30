@@ -91,10 +91,14 @@
             }
         }
     }
+    @at-root html {
+        --home-slide-line-duration: 5s;
+    }
     &__slider-line.active {
+        
         .home-front-screen__slider-line-item {
             transform: none;
-            animation: scaling 0.5s linear;
+            animation: scaling var(--home-slide-line-duration) linear;
         }
         
     }
@@ -138,6 +142,10 @@
         top: 0;
         left: 0;
         z-index: -1;
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
         img {
             width: 100%;
             height: 100%;
@@ -150,6 +158,7 @@
             top: 0;
             width: 100%;
             height: 100%;
+            z-index: 1;
             background: rgba(0, 0, 0, 0.50);
         }
     }
