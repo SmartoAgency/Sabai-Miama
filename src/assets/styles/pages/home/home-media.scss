@@ -4,6 +4,10 @@
     padding-top: calc(var(--section-v-offset) / 2);
     padding-bottom: calc(var(--section-v-offset) / 2);
     background-color: var(--color-gray-bg);
+    @include to(600px){
+        max-width: 100vw;
+        overflow: hidden
+    }
     &__content {
         @include row-flex();
     }
@@ -12,6 +16,17 @@
         @include shift(0);
         @include to(1024px){
             margin-bottom: 15px;
+        }
+    }
+    &__slider {
+        @include size(4);
+        @include shift(0);
+        @include size-xs(4);
+        @include shift-xs(0);
+        @include to(600px){
+            .swiper-container {
+                overflow: visible
+            }
         }
     }
     &__title {
@@ -23,11 +38,10 @@
         }
     }
     &__item {
-        @include size(1);
-        @include shift(0);
         background-color: var(--color-white);
-        padding: 80px;
+        padding: pxWidthInVw(80) 80px;
         text-align: center;
+        display: block;
         @include to(1024px){
             padding: 40px;
             width: auto;

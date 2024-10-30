@@ -178,7 +178,9 @@
   &__developer {
     @include size(1);
     @include shift(0);
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;align-items: flex-end;
+    align-self: flex-end;
     @include to(1024px){
       order: 9;
     }
@@ -210,6 +212,9 @@
     width: 56px;
     height: 61px;
     margin-left: auto;
+    @include from(1025px){
+      display: block;
+    }
     svg {
       width: 100%;
       height: 100%;

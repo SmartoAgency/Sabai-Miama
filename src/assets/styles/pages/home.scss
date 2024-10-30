@@ -27,7 +27,7 @@
         // align-items: flex-start;
         // align-content: flex-start;
         height: 100%;
-        padding-top: 250px;
+        padding-top: Min(pxInVh(250), 250px);
         @include to(1024px){
             padding-top: calc(var(--header-h) + 60px);
         }

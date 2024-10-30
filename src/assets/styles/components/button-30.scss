@@ -25,7 +25,7 @@
         border: 1px solid var(--color-dark);
         color: var(--color-dark);
         @include text-style-1920-h-5;
-        padding: 18px;
+        padding: pxWidthInVw(18) 18px;
         @include to(600px){
             padding: 8px 16px 8px 8px;
         }

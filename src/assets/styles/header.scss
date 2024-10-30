@@ -12,8 +12,13 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	background-color: rgba($color-white, 0.2);
+	// background-color: rgba($color-white, 0.2);
+	background-color: rgba($color-dark, 0.75);
 	backdrop-filter: blur(12px);
+	&.headroom--top {
+		backdrop-filter: none;
+		background-color: transparent;
+	}
 	@include to(1440px){
 		--logo-w: 260px;
 	}
@@ -52,7 +57,7 @@
 			top: var(--header-h);
 			left: 0;
 			width: 100%;
-			height: 100vh;
+			height: calc(var(--vh, 1vh) * 100 - var(--header-h));
 			background-color: var(--color-dark);
 			flex-direction: column;
 			justify-content: center;

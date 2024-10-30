@@ -81,6 +81,12 @@
                 background-color: var(--color-dark);
                 color: var(--color-white);
             }
+            &:hover &-icon path {
+                fill: var(--color-white);
+            }
+            &:hover &-text {
+                color: var(--color-white);
+            }
         }
     }
     @include to(1024px){

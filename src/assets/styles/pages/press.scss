@@ -12,6 +12,9 @@
         @include shift-xs-left(0.1);
         @include shift-xs-right(0);
         margin-top: calc(var(--section-v-offset) / 2);
+        @include from(1025px){
+            padding-left: 20px;
+        }
         @include from-to(601px, 1024px){
             @include size(2);
             @include shift-right(0);
@@ -134,5 +137,22 @@
     }
     &__button {
 
+    }
+    @media (hover: hover) {
+        &__icon rect {
+            transition: .25s ease-out;
+        }
+        &__icon path {
+            transform-origin: center;
+            transform-box: fill-box;
+            transition: .25s ease-out;
+        }
+        &:hover &__icon rect {
+            fill: var(--color-white);
+            stroke: var(--color-white);
+        }
+        &:hover &__icon path {
+            transform: rotate(45deg);
+        }
     }
 }

@@ -24,7 +24,9 @@ function blockWithRenderNotDesktopSlider() {
         })
     });
 
-    setCurrentIndex(0);
+    if (window.screen.width < 1024) {
+        setCurrentIndex(0);
+    }
     // data-about-us-block-with-render-slide-next
     document.body.addEventListener('click', function (e) {
         if (e.target.closest('[data-about-us-block-with-render-slide-next]')) {

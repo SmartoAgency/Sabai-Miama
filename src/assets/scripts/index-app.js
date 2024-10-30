@@ -1,35 +1,14 @@
-import $ from "jquery";
-import axios from 'axios';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import Swiper, { EffectFade, FreeMode, Navigation, Pagination, Thumbs } from 'swiper';
 import Headroom from "headroom.js";
-import { lenis } from './modules/scroll/leniscroll';
-import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
+import './modules/scroll/leniscroll';
 import { gsap, ScrollTrigger } from 'gsap/all';
-import "current-device";
+import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
 import menu from './modules/menu';
 import './modules/form';
 import { formsHandler } from "./modules/form/formsHandler";
 
-
-const scroller = lenis;
-
-Swiper.use([EffectFade, Navigation, Pagination, Thumbs, FreeMode]);
-/** ******************************* */
-/*
- * smooth scroll start
- */
-gsap.registerPlugin(ScrollTrigger);
-gsap.core.globals("ScrollTrigger", ScrollTrigger);
-// global.gsap = gsap;
-
-
-
 formsHandler();
 
-// lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
-//   ScrollTrigger.update()
-// })
+gsap.registerPlugin(ScrollTrigger);
 
 
 var myElement = document.querySelector("header");
@@ -95,23 +74,32 @@ document.body.addEventListener('click',function(evt){
 
 
 menu();
-splitToLinesAndFadeUp('section:not(.section-1) .text-style-h-1, section  .text-style-h-3');
-splitToLinesAndFadeUp('.text-style-h-1');
-
 
 function mobileCallbackPopup() {
-  document.body.addEventListener('click',function(evt){
+  document.body.addEventListener('click', function(evt) {
     const target = evt.target.closest('[data-mobile-callback-popup-call]');
-    if (!target) return;
-    document.querySelector('.header').classList.add('js-mobile-callback-opened');
-    document.querySelector('[data-mobile-callback-popup]').classList.add('active');
+    if (target) {
+      document.querySelector('.header').classList.add('js-mobile-callback-opened');
+      document.querySelector('[data-mobile-callback-popup]').classList.add('active');
+    }
   });
-  document.body.addEventListener('click',function(evt){
+
+  document.body.addEventListener('click', function(evt) {
     const target = evt.target.closest('[data-mobile-callback-close]');
-    if (!target) return;
-    document.querySelector('.header').classList.remove('js-mobile-callback-opened');
-    document.querySelector('[data-mobile-callback-popup]').classList.remove('active');
+    if (target) {
+      document.querySelector('.header').classList.remove('js-mobile-callback-opened');
+      document.querySelector('[data-mobile-callback-popup]').classList.remove('active');
+    }
   });
 }
 
 mobileCallbackPopup();
+
+splitToLinesAndFadeUp('[data-split-lines-and-fade-up]', gsap);
+
+const pthname = window.location.pathname;
+document.querySelectorAll('.header__link').forEach((link) => {
+  if (pthname !== link.getAttribute('href')) {
+    link.classList.remove('active');
+  }
+});

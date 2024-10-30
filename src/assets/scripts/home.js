@@ -1,7 +1,11 @@
-import Swiper, { Navigation, EffectFade } from 'swiper';
+import Swiper, { Navigation, EffectFade, FreeMode, Autoplay } from 'swiper';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useState } from "./modules/helpers/helpers";
 import { debounce, once } from "lodash";
 import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function setVh() {
     let vh = document.documentElement.clientHeight * 0.01;
@@ -33,33 +37,9 @@ document.body.addEventListener('click',function(evt){
     const target = evt.target.closest('[data-down-arrow]');
     if(!target) return;
     
-    document.querySelector('.spinhouse-demo-screen').scrollIntoView({behavior: 'smooth'});
+    document.querySelector('.home-front-screen').nextElementSibling.scrollIntoView({behavior: 'smooth'});
 });
 
-
-
-
-
-
-//home-features-block__item
-
-function applyScrollTriggerAnimation(selectors) {
-    document.querySelectorAll(selectors).forEach((el) => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: el,
-                start: '50% bottom',
-                // end: 'bottom center',
-                once: true,
-            },
-        })
-            .fromTo(Array.from(el.children),
-                { y: 25, autoAlpha: 0 },
-                { y: 0, autoAlpha: 1, clearProps: 'all', duration: 1.25, ease: 'power4.out', stagger: 0.1 },
-            );
-    });
-}
-applyScrollTriggerAnimation('.contact-screen-form, .home-features-block__item, .home-for-who-block__item, .transform-vision-into-reality-block__description');
 
 
 //data-home-process-slider
@@ -155,3 +135,51 @@ function alignImageByAccordeon(accordeon, image) {
     
 }
 homeAwardsAccordeon();
+
+
+function homeMediaSlider() {
+    const a = new Swiper('[data-home-media-slider]', {
+        modules: [FreeMode, Autoplay],
+        slidesPerView: 4,
+        speed: 1500,
+        autoplay: {
+            delay: 2000,
+        },
+        freeMode: true,
+        breakpoints: {
+            320: {
+                slidesPerView: 2.3,
+                spaceBetween: 8
+            },
+            1025: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+        },
+    })
+}
+
+homeMediaSlider();
+
+
+function applyScrollTriggerAnimation(selectors) {
+    document.querySelectorAll(selectors).forEach((el) => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: el,
+                start: '50% bottom',
+                // end: 'bottom center',
+                once: true,
+            },
+        })
+            .fromTo(Array.from(el.children),
+                { y: 25, autoAlpha: 0 },
+                { y: 0, autoAlpha: 1, clearProps: 'all', duration: 1.25, ease: 'power4.out', stagger: 0.1 },
+            );
+    });
+}
+applyScrollTriggerAnimation('.press-card, .home-our-process__item');
+
+
+splitToLinesAndFadeUp('.home-about-us__title , .home-awards__title , .home-media__title , .home-press__title , .home-our-process__title , .home-with-render-block__title , .home-company-projects__title', gsap)
+splitToLinesAndFadeUp('.home-with-render-block__title1, .home-with-render-block__title2', gsap)

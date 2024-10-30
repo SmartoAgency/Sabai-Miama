@@ -39,7 +39,7 @@
         background-color: var(--color-gray-bg);
         display: grid; 
         grid-template-columns: repeat(2, auto); 
-        grid-template-rows: 1fr 1fr; 
+        grid-template-rows: auto 1fr; 
         row-gap: calc(var(--section-v-offset) / 2); 
         grid-template-areas: 
             "date img"
