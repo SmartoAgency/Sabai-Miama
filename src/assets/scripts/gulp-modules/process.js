@@ -32,6 +32,7 @@ function processSwipers() {
         breakpoints: {
             360: {
                 slidesPerView: 1.75,
+                spaceBetween: 8
             },
             1025: {
                 slidesPerView: 2.5,
@@ -46,7 +47,15 @@ processSwipers();
 function processNotDesktopSlider() {
     const swiper = new Swiper('[data-process-second-slider]', {
         modules: [Navigation],
-        slidesPerView: 2.05,
+        // slidesPerView: 2.05,
+        breakpoints: {
+            360: {
+                slidesPerView: 1.33,
+            },
+            601: {
+                slidesPerView: 2.05,
+            },
+        },
         navigation: {
             nextEl: '[data-process-second-slider-next]',
             prevEl: '[data-process-second-slider-prev]',

@@ -22,12 +22,17 @@
     &__item {
         @include size(1);
         @include shift(0);
+        @include size-xs(2);
+        @include shift-xs(0);
         padding: 40px;
         text-align: center;
         background-color: var(--color-gray-bg);
         margin-bottom: 20px;
-        @include to(1024px){
+        @include from-to(601px, 1024px){
             @include size(2);
+        }
+        @include to(600px){
+            padding: 24px 12px;
         }
         &-icon {
             text-align: center;
@@ -39,6 +44,9 @@
                 width: 100px;
                 height: auto;
                 margin: auto;
+                @include to(600px){
+                    width: 48px;
+                }
             }
         }
         &-title {

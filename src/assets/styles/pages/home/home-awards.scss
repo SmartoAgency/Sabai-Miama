@@ -27,11 +27,17 @@
         background-color: var(--color-white);
         @include size(3);
         @include shift(0);
+        @include size-xs(4);
+        @include shift-xs(0);
         @include from(1025px){
             margin-bottom: 40px;
         }
-        @include to(1024px){
+        @include from-to(601px, 1024px){
             @include size(4);
+        }
+        @include to(600px){
+            border-left: 1px solid var(--gray-line, #E1E1E1);
+            border-right: 1px solid var(--gray-line, #E1E1E1);
         }
     }
     &__image  {

@@ -30,6 +30,9 @@
             @include size(2);
             @include shift(0);
         }
+        @include to(600px){
+            margin-bottom: 16px;
+        }
     }
     &__text2 {
         @include size(1);
@@ -49,6 +52,24 @@
             @include size(1.8);
             @include shift(0.1);
         }
+        @include to(600px){
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        &:nth-child(odd) {
+            @include size-xs(1.9);
+            @include shift-xs-left(0.1);
+            @include shift-xs-right(0);
+        }
+        &:nth-child(even) {
+            @include size-xs(1.9);
+            @include shift-xs-right(0.1);
+            @include shift-xs-left(0);
+        }
+        
 
         &-inner {
             border-radius: 50%;
@@ -65,6 +86,10 @@
             overflow: hidden;
             @include to(1024px){
                 padding: 10.9vw;
+            }
+            @include to(600px){
+                padding: 22px 30px;
+                width: 100%;
             }
         }
         &-hover {
@@ -96,10 +121,16 @@
             font-weight: 600;
             line-height: 140%; /* 89.6px */
             text-transform: uppercase;
+            @include to(600px){
+                font-size: 32px;
+            }
         }
         &-text {
             @include text-style-1920-h-4;
             max-width: 280px;
+            @include to(600px){
+                @include text-style-360-body;
+            }
         }
         @media (hover: hover) {
             &-inner,

@@ -52,8 +52,19 @@
             transform: translate(-50%,-50%);
             transition: opacity 0.3s ease-out;
         }
+        @include to(600px){
+            @include size(3.6);
+            @include shift(0);
+            padding: 16px;
+            margin-left: 0;
+            margin-right: 0;
+        }
         &-title {
             margin-bottom: 50px;
+            @include to(600px){
+                margin-bottom: 24px;
+                @include text-style-360-h-2;
+            }
         }
         &-icon {
             width: 100px;
@@ -61,6 +72,10 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            @include to(600px){
+                width: 48px;
+                margin-bottom: 24px;
+            }
             svg {
                 width: 100%;
                 height: auto;
@@ -79,6 +94,16 @@
         gap: 20px;
         @include from(1025px){
             display: none;
+        }
+        @include to(600px){
+            gap: 16px;
+            margin-top: 24px;
+        }
+        svg {
+            @include to(600px){
+                width: 48px;
+                height: 48px;
+            }
         }
     }
 }

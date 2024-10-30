@@ -11,9 +11,8 @@
         margin-bottom: calc(var(--section-v-offset) / 2);
         @include size(4);
         @include shift(0);
-        @include to(600px){
-            overflow: visible
-        }
+        @include size-xs(4);
+        @include shift-xs(0);
     }
 
     &__title {

@@ -24,10 +24,15 @@
     &__slider {
         @include size(2);
         @include shift(0);
-        @include to(1024px){
+        @include size-xs(4);
+        @include shift-xs(0);
+        @include from-to(601px, 1024px){
             @include size(4);
+        }
+        @include to(1024px){
             order: 4;
         }
+
     }
     &__slide {
         padding: 40px;
@@ -41,6 +46,10 @@
             "text text"; 
         @include to(1024px){
             grid-template-rows: auto auto;
+        }
+        @include to(600px){
+            padding: 20px;
+            grid-template-columns: auto 60px; 
         }
         &-number {
             grid-area: date;
@@ -69,9 +78,15 @@
     &__image {
         @include size(2);
         @include shift(0);
-        @include to(1024px){
+        @include size-xs(4);
+        @include shift-xs(0);
+        @include from-to(601px, 1024px){
             @include size(4);
             padding: 40px;
+            background-color: var(--color-gray-bg);
+        }
+        @include to(600px){
+            padding: 20px;
             background-color: var(--color-gray-bg);
         }
     }
@@ -80,19 +95,32 @@
         @include shift-left(1);
         @include shift-right(0);
         margin-top: calc(var(--section-v-offset)  / 2);
-        @include to(1024px){
-            order: 5;
+        @include from-to(601px, 1024px){
             @include size(2);
             @include shift-left(2);
         }
+        @include to(600px){
+            @include size(2);
+            @include shift-left(0.1);
+        }
+        @include to(1024px){
+            order: 5;
+        }
         &>:nth-child(n+2) {
             margin-left: 20px;
+            @include to(600px){
+                margin-left: 16px;
+            }
         }
         svg {
             cursor: pointer;
             @include to(1024px){
                 width: 60px;
                 height: 60px;
+            }
+            @include to(600px){
+                width: 48px;
+                height: 48px;
             }
         }
     }

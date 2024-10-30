@@ -49,7 +49,9 @@
         @include shift-left(1);
         margin-top: calc(var(--section-v-offset) / 2);
         position: relative;
-        @include to(1024px){
+        @include size-xs(4);
+        @include shift-xs(0);  
+        @include from-to(601px, 1024px){
             @include size(4);
             @include shift(0);  
         }

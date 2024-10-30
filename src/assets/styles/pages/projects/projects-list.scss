@@ -4,6 +4,9 @@
     &__content {
         @include row-flex;
         row-gap: calc(var(--section-v-offset) / 2);
+        @include to(600px){
+            row-gap: 16px;
+        }
     }
     //every eights .projects-card
     @include from(1025px){
@@ -39,7 +42,11 @@
             @include shift(0);
         }
     }
-    @include to(1024px){
+    .projects-card {
+        @include size-xs(4);
+        @include shift-xs(0);
+    }
+    @include from-to(601px, 1024px){
         .projects-card {
             @include size(2);
             @include shift(0);
@@ -50,7 +57,9 @@
         @include size(1);
         @include shift-left(1);
         @include shift-right(2);
-        @include to(1024px){
+        @include size-xs(2);
+        @include shift-xs(0);
+        @include from-to(601px, 1024px){
             @include size(2);
             @include shift-right(0);
             @include shift-left(2.1);
@@ -80,6 +89,11 @@
         margin-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
+        @include to(600px){
+            margin-top: 8px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
     }
     @media (hover: hover) {
         &:hover {

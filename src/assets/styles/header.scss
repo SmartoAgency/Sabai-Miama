@@ -61,12 +61,14 @@
 			opacity: 0;
 			visibility: hidden;
 			pointer-events: none;
+			display: none;
 			transition: .25s ease-out;
 		}
 		&.active {
 			opacity: 1;
 			visibility: visible;
 			pointer-events: all;
+			display: flex;
 		}
 		@include from(1025px){
 			&>:nth-child(n+2) {

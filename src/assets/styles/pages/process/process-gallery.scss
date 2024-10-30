@@ -44,11 +44,20 @@
     &__slider {
         @include size(4);
         @include shift(0);
+        @include size-xs(4);
+        @include shift-xs(0);
         margin-top: calc(var(--section-v-offset) / 2);
+        @include to(600px){
+            margin-top: 24px;
+        }
+
     }
     &__slide {
         position: relative;
         padding-bottom: 71%;
+        @include to(600px){
+            padding-bottom: 94%;
+        }
         img {
             position: absolute;
             top: 0;
@@ -66,8 +75,23 @@
         @include size(2);
         @include shift-right(0);
         @include shift-left(2.1);
+        @include size-xs(2);
+        @include shift-xs-right(2);
+        @include shift-xs-left(0.1);
+        @include to(600px){
+            margin-top: 24px;
+        }
+        svg {
+            @include to(600px){
+                width: 48px;
+                height: 48px;
+            }
+        }
         svg~svg {
             margin-left: 20px;
+            @include to(600px){
+                margin-left: 12px;
+            }
         }
     }
 }

@@ -57,6 +57,10 @@ body {
 	font-size: 14px;
 	background-color: var(--color-white);
 	@include text-style-1920-body;
+	@media screen and (max-width:600px){
+		
+		@include text-style-360-body;
+	}
 }
 
 body input, body textarea {
@@ -292,20 +296,24 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @include to(600px){
-	[class*="__content"]>[class*="__subtitle"] {
-		@include size(4);
-	}
-	[class*="__content"]>[class*="__title"] {
-		margin-bottom: 24px;
-	}
-	[class*="__content"]>[class*="__description2"],
-	[class*="__content"]>[class*="__description1"],
-	[class*="__content"]>[class*="__text2"],
-	[class*="__content"]>[class*="__text1"] {
-		@include size(4);
-	}
+}
+[class*="__content"]>[class*="__subtitle"] {
+	@include size-xs(4);
+	@include shift-xs(0);
+}
+[class*="__content"]>[class*="__title"] {
+	margin-bottom: 24px;
+	@include size-xs(4);
+	@include shift-xs(0);
+}
+[class*="__content"]>[class*="__description2"],
+[class*="__content"]>[class*="__description1"],
+[class*="__content"]>[class*="__text2"],
+[class*="__content"]>[class*="__text1"] {
+	@include size-xs(4);
+	@include shift-xs(0);
+}
 
-	[class*="__content"]>[class*="__description1"] {
-		margin-bottom: 20px;
-	}
+[class*="__content"]>[class*="__description1"] {
+	margin-bottom: 20px;
 }

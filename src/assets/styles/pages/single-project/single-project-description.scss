@@ -3,6 +3,19 @@
     padding-bottom: var(--section-v-offset);
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
+    @include to(600px){
+        padding-top: 24px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            right: 0;
+            height: 1px;
+            width: calc(100% - 20px);
+            background-color: var(--color-gray-line);
+        }
+    }
     &__content {
         @include row-flex;
     }
@@ -13,12 +26,19 @@
             @include size(4);
             margin-bottom: 40px;
         }
+        @include to(600px){
+            @include text-style-360-h-2
+        }
     }
     &__text {
         @include size(2);
         @include shift(0);
-        @include to(1024px){
+        @include size-xs(4);
+        @include shift-xs(0);
+        @include from-to(601px, 1024px){
             @include size(4);
+        }
+        @include to(1024px){
             &>:first-child {
                 margin-bottom: 20px;
             }
@@ -35,6 +55,9 @@
     &__slide {
         position: relative;
         padding-bottom: 71%;
+        @include to(600px){
+            padding-bottom: 94.09%;
+        }
         img {
             position: absolute;
             top: 0;
@@ -51,6 +74,18 @@
         @include size(2);
         @include shift-right(0);
         @include shift-left(2.1);
+        @include size-xs(2);
+        @include shift-xs-right(0);
+        @include shift-xs-left(0.1);
         margin-top: calc(var(--section-v-offset) / 2);
+        svg {
+            @include to(600px){
+                width: 48px;
+                height: 48px;
+            }
+        }
+        svg~svg {
+            margin-left: 10px;
+        }
     }
 }

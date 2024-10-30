@@ -48,7 +48,9 @@
         @include size(2);
         @include shift-left(1);
         @include shift-right(0);
-        @include to(1024px){
+        @include size-xs(4);
+        @include shift-xs(0);
+        @include from-to(601px, 1024px){
             @include size(4);
             @include shift(0);
         }

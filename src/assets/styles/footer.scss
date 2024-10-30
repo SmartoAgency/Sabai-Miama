@@ -36,6 +36,7 @@
     }
     @include to(600px){
       padding-bottom: 24px;
+      margin-bottom: 24px;
     }
   }
   &__link1 {
@@ -208,7 +209,6 @@
   .dev-logo {
     width: 56px;
     height: 61px;
-    display: block;
     margin-left: auto;
     svg {
       width: 100%;

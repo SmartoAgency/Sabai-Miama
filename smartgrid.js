@@ -1,4 +1,5 @@
 var smartgrid = require('smart-grid');
+const { offset } = require('smart-grid/system/defaults/settings');
 
 /* It's principal settings in smart grid project */
 var settings = {
@@ -25,7 +26,8 @@ var settings = {
             fields: '10px' /* set fields only if you want to change container.fields */
         },
         xs: {
-            width: '560px'
+            width: '600px',
+            offset: '10px',
         }
         /* 
         We can create any quantity of break points.

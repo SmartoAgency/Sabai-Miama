@@ -54,9 +54,13 @@
         justify-content: space-between;
         cursor: pointer;
         transition: .25s ease-out;
-        @include to(1024px){
+        @include from-to(601px ,1024px){
             @include size(2);
             height: 380px;
+        }
+        @include to(600px){
+            height: 340px;
+            padding: 16px;
         }
         &:nth-child(3n-1) {
             @include from(1025px){
@@ -88,19 +92,36 @@
         @include from(1025px){
             display: none;
         }
+        @include to(600px){
+            margin-left: -5px;
+            margin-right: -5px;
+        }
     }
     &__not-desktop-slider &__item {
         @include size(4);
+        @include size-xs(4);
     }
     &__not-desktop-nav {
         @include size(2);
         @include shift-left(2.1);
         @include shift-right(0);
+        @include shift-xs-left(0.1);
+        @include shift-xs-right(0);
+        @include size-xs(3.9);
         margin-top: 60px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         column-gap: 20px;
+        @include to(600px){
+            margin-top: 24px;
+            column-gap: 16px;
+            svg {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
         @include from(1025px){
             display: none;
         }

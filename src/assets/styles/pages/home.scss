@@ -54,10 +54,12 @@
         @include size(3);
         @include shift-left(1);
         @include shift-right(0);
+        @include size-xs(4);
+        @include shift-xs(0);
         height: max-content;
         margin-bottom: 40px;
         align-self: flex-end;
-        @include to(1024px){
+        @include from-to(601px, 1024px){
             @include size(4);
             @include shift(0);
         }
@@ -99,14 +101,16 @@
     &__description {
         @include size(2);
         @include shift(0);
-        @include to(1024px){
+        @include size-xs(4);
+        @include shift-xs(0);
+        @include from-to(601px, 1024px){
             @include size(3);
             @include shift(0);
         }
-        @include to(600px){
-            @include size(4);
-            @include shift(0);
-        }
+        // @include to(600px){
+        //     @include size(4);
+        //     @include shift(0);
+        // }
     }
     &__subtitle {
         @include size(1);
@@ -205,13 +209,13 @@
             @include shift(0);
         }
     }
+    &__item {
+        @include size-xs(4);
+        @include shift-xs(0);
+    }
     @include to(600px){
-        &__item:nth-child(n+3) {
+        &__item:nth-child(n+2) {
             display: none;
-        }
-        &__item {
-            @include size(4);
-            @include shift(0);
         }
     }
 }
