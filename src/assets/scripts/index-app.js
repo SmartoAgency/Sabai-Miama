@@ -9,7 +9,7 @@ import { formsHandler } from "./modules/form/formsHandler";
 formsHandler();
 
 gsap.registerPlugin(ScrollTrigger);
-
+gsap.core.globals('ScrollTrigger', ScrollTrigger);
 
 var myElement = document.querySelector("header");
 // construct an instance of Headroom, passing the element

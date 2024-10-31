@@ -50,6 +50,8 @@
     &__slider {
         @include size(4);
         @include shift(0);
+        @include size-xs(4);
+        @include shift-xs(0);
         margin-top: calc(var(--section-v-offset) / 2);
     }
     &__slide {

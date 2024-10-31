@@ -6,6 +6,7 @@ import { debounce, once } from "lodash";
 import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.core.globals('ScrollTrigger', ScrollTrigger);
 
 function setVh() {
     let vh = document.documentElement.clientHeight * 0.01;
@@ -117,12 +118,19 @@ splitToLinesAndFadeUp('.home-with-render-block__title1, .home-with-render-block_
 
 function homeAwardsAccordeon() {
     const image = document.querySelector('.home-awards__image');
-    document.querySelectorAll('[data-home-accordeon]').forEach((el) => {
+    const accordeons = document.querySelectorAll('[data-home-accordeon]');
+    accordeons.forEach((el) => {
         el.addEventListener('click', function (evt) {
-            image.querySelector('img').src = el.dataset.img;
-            image.classList.add('active');
-            image.style.transform = '';
-            alignImageByAccordeon(document.querySelectorAll('[data-home-accordeon]')[0], image);
+            el.classList.toggle('active');
+            accordeons.forEach((accordeon) => {
+                if (accordeon !== el) {
+                    accordeon.classList.remove('active');
+                }
+            });
+            // image.querySelector('img').src = el.dataset.img;
+            // image.classList.add('active');
+            // image.style.transform = '';
+            // alignImageByAccordeon(document.querySelectorAll('[data-home-accordeon]')[0], image);
         });
     });
 }

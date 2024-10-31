@@ -33,6 +33,10 @@
         }
         @include to(600px){
             padding-top: calc(var(--header-h) + 21px);
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            padding-bottom: 20px;
         }
     }
     &__text1 {
