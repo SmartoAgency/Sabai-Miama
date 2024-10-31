@@ -229,7 +229,8 @@
 
   .dev-logo {
     width: 56px;
-    height: 61px;
+    // height: 61px;
+    height: auto;
     margin-left: auto;
     @include from(1025px){
       display: block;
