@@ -57,6 +57,9 @@
             @include size(4);
             @include shift(0);
         }
+        @include to(600px){
+            height: 50vh;
+        }
     }
     &__more  {
         @include size(1);
