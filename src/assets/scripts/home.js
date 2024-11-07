@@ -35,13 +35,6 @@ document.body.addEventListener('click',function tabletMenuHandler(evt){
 });
 
 
-document.body.addEventListener('click',function(evt){
-    const target = evt.target.closest('[data-down-arrow]');
-    if(!target) return;
-    
-    document.querySelector('.home-front-screen').nextElementSibling.scrollIntoView({behavior: 'smooth'});
-});
-
 
 
 //data-home-process-slider
