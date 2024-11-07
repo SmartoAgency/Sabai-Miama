@@ -103,3 +103,21 @@ document.querySelectorAll('.header__link').forEach((link) => {
     link.classList.remove('active');
   }
 });
+
+document.querySelectorAll('.home-front-screen').forEach((screen) => {
+  const nextElement = screen.nextElementSibling;
+  if (!nextElement) return;
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: nextElement,
+      scrub: true,
+    }
+  }).fromTo(screen, {
+    y: 0
+  }, { 
+    y: window.innerHeight,
+  });
+
+
+});

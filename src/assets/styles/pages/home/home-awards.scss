@@ -58,6 +58,13 @@
         border-top: 1px solid var(--gray-line, #E1E1E1);
         border-bottom: 1px solid var(--gray-line, #E1E1E1);
         cursor: pointer;
+        @include from(1025px){
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: calc(100% + 40px);
+        }
         @include from-to(601px, 1024px){
             // border-left: 1px solid var(--gray-line, #E1E1E1);
             // border-left: 1px solid var(--gray-line, #E1E1E1);

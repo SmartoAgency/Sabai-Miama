@@ -45,14 +45,14 @@ export function paralaxesScreens(deviceType = 'desktop', gsap) {
             
         })
             .fromTo(el.querySelector('.paralax-screen-wrapper-transform'), {
-                y: -400,
+                y: -75,
                 ...transformationValues(deviceType).from
             }, {
-                y: 400,
+                y: 75,
                 ...transformationValues(deviceType).to
             })
             .fromTo(el.querySelector('.paralax-screen-wrapper-scale'), {
-                scale: 1.4
+                scale: 1.1
             }, {
                 scale: 1
             }, '<');

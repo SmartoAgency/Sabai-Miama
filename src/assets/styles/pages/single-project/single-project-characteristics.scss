@@ -1,6 +1,8 @@
 .single-project-characteristics  {
     padding: var(--section-v-offset) var(--page-side-fields);
     position: relative;
+    z-index: 2;
+    background-color: var(--color-white);
     &__content {
         @include row-flex;
     }

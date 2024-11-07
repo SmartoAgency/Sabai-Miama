@@ -6,6 +6,7 @@
     padding-bottom: calc(var(--section-v-offset) / 2);
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     @include to(600px){
         height: calc(var(--vh, 1vh) * 100 - var(--header-h));
     }

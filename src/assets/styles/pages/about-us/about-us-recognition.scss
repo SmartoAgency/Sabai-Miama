@@ -80,6 +80,16 @@
         @include shift(0);
         @include size-xs(4);
         @include shift-xs(0);
+        @include from(1025px){
+            .swiper-wrapper,
+            .swiper-container {
+                height: 100%;
+            }
+            img {
+                height: 100%;
+                object-fit: cover
+            }
+        }
         @include from-to(601px, 1024px){
             @include size(4);
             padding: 40px;

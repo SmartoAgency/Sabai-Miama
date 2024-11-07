@@ -8,6 +8,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
     @include to(1024px){
         height: calc(100vh - var(--header-h));
     }

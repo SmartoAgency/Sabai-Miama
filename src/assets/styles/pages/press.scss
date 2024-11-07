@@ -1,6 +1,8 @@
 .press-list {
     position: relative;
     padding: var(--section-v-offset) var(--page-side-fields) calc(var(--section-v-offset) / 2) var(--page-side-fields);
+    z-index: 2;
+    background-color: var(--color-white);
     @include to(600px){
         padding-bottom: var(--section-v-offset);
     }
@@ -35,6 +37,9 @@
         margin-bottom: 20px;
         &:last-of-type {
             margin-bottom: 0;
+            @include from(1025px){
+                margin-bottom: 20px;
+            }
         }
         @include from-to(601px, 1024px){
             @include size(4);
@@ -148,11 +153,12 @@
             transition: .25s ease-out;
         }
         &:hover &__icon rect {
-            fill: var(--color-white);
-            stroke: var(--color-white);
+            fill: var(--color-accent-green);
+            stroke: var(--color-accent-green);
         }
         &:hover &__icon path {
             transform: rotate(45deg);
+            stroke: var(--color-white);
         }
     }
 }

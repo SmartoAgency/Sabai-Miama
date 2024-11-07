@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useState } from "./modules/helpers/helpers";
 import { debounce, once } from "lodash";
 import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
+import { paralaxesScreens } from './modules/effects/paralaxesScreens';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.core.globals('ScrollTrigger', ScrollTrigger);
@@ -146,7 +147,8 @@ homeAwardsAccordeon();
 
 
 function homeMediaSlider() {
-    const a = new Swiper('[data-home-media-slider]', {
+    const sliderContainer = document.querySelector('[data-home-media-slider]');
+    const a = new Swiper(sliderContainer, {
         modules: [FreeMode, Autoplay],
         slidesPerView: 4,
         speed: 1500,
@@ -163,6 +165,18 @@ function homeMediaSlider() {
                 slidesPerView: 4,
                 spaceBetween: 20
             },
+        },
+    });
+
+
+    ScrollTrigger.create({
+        trigger: sliderContainer,
+        onLeave: () => {
+            a.autoplay.start();
+            
+        },
+        onEnterBack: () => {
+            a.autoplay.start();
         },
     })
 }
@@ -196,7 +210,8 @@ splitToLinesAndFadeUp('.home-with-render-block__title1, .home-with-render-block_
 
 function frontScreenSlider() {
     const duration = 5000;
-    const slider = new Swiper('[data-home-slider]', {
+    const sliderContainer = document.querySelector('[data-home-slider]');
+    const slider = new Swiper(sliderContainer, {
         modules: [Navigation, Autoplay, EffectFade],
         slidesPerView: 1,
         speed: 750,
@@ -222,7 +237,21 @@ function frontScreenSlider() {
         },
     });
     //data-home-slider-line
+
+    ScrollTrigger.create({
+        trigger: sliderContainer,
+        onLeave: () => {
+            slider.autoplay.start();
+            
+        },
+        onEnterBack: () => {
+            slider.autoplay.start();
+        },
+    })
 }
 
 
 frontScreenSlider();
+
+
+paralaxesScreens('desktop', gsap);

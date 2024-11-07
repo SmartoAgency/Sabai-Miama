@@ -322,3 +322,10 @@ input[type=number]::-webkit-outer-spin-button {
 	@include shift-xs(0);
 }
 
+
+
+.paralax-screen-wrapper-transform,
+.paralax-screen-wrapper-scale {
+	width: 100%;
+	height: 100%;
+}

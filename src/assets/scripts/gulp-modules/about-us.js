@@ -1,5 +1,6 @@
 import Swiper, { Navigation, Controller } from 'swiper';
 import { useState } from '../modules/helpers/helpers';
+import { paralaxesScreens } from '../modules/effects/paralaxesScreens';
 
 const recognition2 = new Swiper('[data-about-us-recognition-slider2]', {
     modules: [Controller],
@@ -63,3 +64,6 @@ function aboutUsDescriptionOpen() {
 }
 
 aboutUsDescriptionOpen();
+
+
+paralaxesScreens('desktop', gsap);

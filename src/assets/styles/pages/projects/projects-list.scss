@@ -1,6 +1,8 @@
 .projects-list {
     position: relative;
     padding: var(--section-v-offset) var(--page-side-fields);
+    z-index: 2;
+    background-color: var(--color-white);
     &__content {
         @include row-flex;
         row-gap: calc(var(--section-v-offset) / 2);
