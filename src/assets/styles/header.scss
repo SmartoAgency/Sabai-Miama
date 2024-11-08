@@ -99,6 +99,14 @@
 				background-color: var(--color-white);
 			}
 		}
+		@media (hover: hover) {
+			& {
+				transition: .25s ease-out;
+			}
+			&:hover {
+				color: var(--color-subtitle-gray);
+			}
+		}
 	}
 	&__logo {
 		width: var(--logo-w);

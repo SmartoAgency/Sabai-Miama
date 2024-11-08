@@ -133,6 +133,14 @@
         }
       }
     }
+    @media (hover: hover) {
+      a {
+        transition: .25s ease-out;
+      }
+      a:hover {
+        color: var(--color-accent-green);
+      }
+    }
   }
   &__separate-line {
     @include size(4);

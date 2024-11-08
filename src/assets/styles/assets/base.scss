@@ -329,3 +329,61 @@ input[type=number]::-webkit-outer-spin-button {
 	width: 100%;
 	height: 100%;
 }
+
+
+
+@media (hover: hover) {
+	[class*="__counter"],
+	[class*="__navigation"] {
+		rect,
+		path {
+			transition: .25s ease-out;
+			transform-origin: center;
+			transform-box: fill-box;
+		}
+		svg:hover {
+			rect{
+				fill: var(--color-accent-green);
+				-webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+				animation: pulsate-bck 0.5s ease-in-out infinite both;
+			}
+			path {
+				stroke: var(--color-white)
+			}
+		}
+	}
+}
+
+@-webkit-keyframes pulsate-bck {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	50% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@keyframes pulsate-bck {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	50% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}

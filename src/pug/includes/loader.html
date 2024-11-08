@@ -91,6 +91,7 @@ function frontScreenAnimation() {
         }, '<')
         .fromTo('.home-front-screen__content>*', {
             // y:100,
+            y: -20,
             autoAlpha: 0,
         }, {
             y: 0,
@@ -126,23 +127,21 @@ function frontScreenAnimation() {
         })
             .fromTo('.anim-on-top', {y: 0}, {y: -30, duration: 1.2})
             .fromTo('.anim-on-bottom', {y: 0}, {y: 30, duration: 1.2}, '<')
-            .add(() => {
-                if (window.location.hash) {
-                } else {
-                    // window.scrollTo({
-                    //     top: 0,
-                    //     behavior: 'smooth',
-                    // });
-                }
+            // .to('.loader-wrap', {opacity: 0, duration: 0.5},'<')
+            .fromTo('.loader-wrap', { 
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+            }, {
+                clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
+                // ease: 'power4.out',
+                duration: 0.55
             })
-            .to('.loader-wrap', {opacity: 0, duration: 0.5},'<')
-            .set('.loader-wrap', {display: 'none'})
             .add(() => {
                 loaderStatus.isCounterAnim = false;
                 document.querySelectorAll('[data-page-elements-style-for-loader]').forEach(el => el.remove())
                 window.dispatchEvent(new CustomEvent('loaderStatus', {detail: loaderStatus}));
                 frontScrennAnim.play();
-        }, '<')
+            }, '<50%')
+            .set('.loader-wrap', {display: 'none'}, '+=1')
         if (sessionStorage.getItem('visit') !== null) {
             loaderTimeline.play();
         } else {
