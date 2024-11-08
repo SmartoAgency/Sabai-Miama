@@ -176,7 +176,7 @@ $dark: $color-dark;
 
 @mixin text-style-1920-navigation() {
 	font-size: 20px;
-	font-size: pxWidthInVw(20);
+	font-size: Min(20px, pxWidthInVw(20));
 	font-family: Inter Display;
 	font-weight: 500;
 	font-style: normal;
@@ -186,6 +186,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-body() {
 	font-size: 18px;
+	font-size: Min(18px, pxWidthInVw(18));
 	font-family: Roboto;
 	font-weight: 500;
 	font-style: normal;
@@ -210,7 +211,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-h-2() {
 	font-size: 104px;
-	font-size: pxWidthInVw(104);
+	font-size: Min(104px, pxWidthInVw(104));
 	font-family: Bebas Neue;
 	font-weight: 400;
 	font-style: normal;
@@ -226,7 +227,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-h-3() {
 	font-size: 64px;
-	font-size: pxWidthInVw(64);
+	font-size:  Min(64px, pxWidthInVw(64));
 	font-family: Bebas Neue;
 	font-weight: 400;
 	font-style: normal;
@@ -242,7 +243,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-h-4() {
 	font-size: 32px;
-	font-size: pxWidthInVw(32);
+	font-size:  Min(32px, pxWidthInVw(32));
 	font-family: Roboto;
 	font-weight: 500;
 	font-style: normal;
@@ -273,7 +274,7 @@ $dark: $color-dark;
 }
 @mixin text-style-1920-subtitle() {
 	font-size: 24px;
-	font-size: pxWidthInVw(24);
+	font-size:  Min(24px, pxWidthInVw(24));
 	font-family: Roboto;
 	font-weight: 400;
 	font-style: normal;

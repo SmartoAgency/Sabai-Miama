@@ -55,6 +55,7 @@
     &__slide {
         position: relative;
         padding-bottom: 71%;
+        padding-bottom: min(71%, 80vh);
         @include to(600px){
             padding-bottom: 94%;
         }

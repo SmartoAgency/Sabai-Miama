@@ -75,6 +75,9 @@
     color: var(--color-dark);
     &__img {
         padding-bottom: 100%;
+        @include from(1025px){
+            padding-bottom: Min(100%, 80vh);
+        }
         position: relative;
         overflow: hidden;
         img {

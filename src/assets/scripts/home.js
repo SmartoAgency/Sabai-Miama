@@ -174,8 +174,7 @@ function homeMediaSlider() {
     })
 }
 
-homeMediaSlider();
-
+window.addEventListener('load', homeMediaSlider);
 
 function applyScrollTriggerAnimation(selectors) {
     document.querySelectorAll(selectors).forEach((el) => {
@@ -235,16 +234,18 @@ function frontScreenSlider() {
         trigger: sliderContainer,
         onLeave: () => {
             slider.autoplay.start();
+            console.log('frontScreenSlider', 'onLeave');
+            
             
         },
         onEnterBack: () => {
             slider.autoplay.start();
+            console.log('frontScreenSlider', 'onEnterBack');
         },
     })
 }
 
-
-frontScreenSlider();
+window.addEventListener('load', frontScreenSlider);
 
 
 paralaxesScreens('desktop', gsap);

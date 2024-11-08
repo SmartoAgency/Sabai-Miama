@@ -55,6 +55,7 @@
         }
         &-img {
             padding-bottom: 77%;
+            padding-bottom: min(77%, 80vh);
             position: relative;
             @include to(1024px){
                 padding-bottom: 62.06%;

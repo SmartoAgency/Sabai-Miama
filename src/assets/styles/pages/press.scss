@@ -75,7 +75,7 @@
         color: var(--color-accent-green);
         font-family: $default-font3;
         // font-size: 24px;
-        font-size: pxWidthInVw(24);
+        font-size: Min(pxWidthInVw(24), 24px);
         font-style: normal;
         font-weight: 400;
         line-height: 120%; /* 28.8px */
