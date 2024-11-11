@@ -47,6 +47,7 @@
 
 html{
 	font-size: 14px;
+	overscroll-behavior: none;
 }
 body {
 	margin: 0;
@@ -56,10 +57,15 @@ body {
 	overflow-x: hidden !important;
 	font-size: 14px;
 	background-color: var(--color-white);
+	overscroll-behavior: none;
 	&.no-scroll {
 		overflow: hidden;
 	}
 	@include text-style-1920-body;
+	@include from-to(601px, 1024px){
+		
+		@include text-style-768-body;
+	}
 	@media screen and (max-width:600px){
 		
 		@include text-style-360-body;

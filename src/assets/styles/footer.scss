@@ -216,6 +216,7 @@
   &__link {
     position: relative;
     width: max-content;
+    min-height: 1.25em;
     &::after {
       content: '';
       position: absolute;

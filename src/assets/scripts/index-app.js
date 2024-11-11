@@ -111,12 +111,13 @@ document.querySelectorAll('.home-front-screen').forEach((screen) => {
   gsap.timeline({
     scrollTrigger: {
       trigger: nextElement,
-      scrub: true,
+      // end: 'bottom bottom',
+      scrub: 0.5,
     }
   }).fromTo(screen, {
     y: 0
   }, { 
-    y: window.innerHeight,
+    y: Math.min(window.innerHeight, 1024),
   });
 
 

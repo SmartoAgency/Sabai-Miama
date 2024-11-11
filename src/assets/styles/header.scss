@@ -25,6 +25,9 @@
 	@include to(1024px){
 		--logo-w: 140px;
 		height: var(--header-h);
+		@at-root body.no-scroll & {
+			background-color: var(--color-dark);
+		}
 	}
 	@include from-to(1025px, 1439px){
 		--logo-w: 200px;

@@ -121,6 +121,9 @@
     }
     &__title {
         grid-area: title;
+        @include from-to(601px, 1024px){
+            font-size: 28px;
+        }
     }
     &__icon {
         width: 80px;
