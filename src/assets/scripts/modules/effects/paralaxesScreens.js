@@ -40,7 +40,7 @@ export function paralaxesScreens(deviceType = 'desktop', gsap) {
             },
             scrollTrigger: {
                 trigger: el,
-                scrub: true,
+                scrub: 1,
             }
             
         })
