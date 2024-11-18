@@ -89,7 +89,15 @@
             @include shift(0);
             @include size-xs(3);
             @include shift-xs(0);
-            margin-bottom: 20px;
+            @include from(1025px){
+                padding-top: 8px;
+                padding-bottom: 8px;
+                align-self: flex-end;
+                height: calc(1em + 16px);
+            }
+            @include to(1024px){
+                margin-bottom: 20px;
+            }
             @include to(600px){
                 // @include size(3);
                 margin-bottom: 0;
@@ -103,6 +111,9 @@
             path,
             rect {
                 transition: fill .25s ease-out;
+            }
+            @include from(1025px){
+                height: 80px;
             }
             @include from-to(601px, 1024px){
                 svg {
