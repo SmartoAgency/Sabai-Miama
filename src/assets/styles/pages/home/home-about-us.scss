@@ -10,92 +10,93 @@
         @include row-flex();
     }
     &__subtitle  {
-        @include size(1);
+        @include size(24);
         @include shift(0);
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--color-gray-bg);
+        margin-bottom: 40px;
         @include to(1024px){ 
             margin-bottom: 15px;
         }
     }
-    &__title  {
-        @include size(3);
-        @include shift(0);
-        margin-bottom: 40px;
-        @include to(1024px){
-            @include size(4);
-        }
-    }
-    &__description1  {
-        @include size(1);
-        @include shift-right(0);
-        @include shift-left(2);
-        margin-bottom: 100px;
-        @include to(1024px){
-            @include size(2);
-            @include shift(0);
-            margin-bottom: 60px;
-        }
-    }
-    &__description2  {
-        @include size(1);
-        @include shift(0);
-        margin-bottom: 100px;
-        @include to(1024px){
-            @include size(2);
-            @include shift(0);
-            margin-bottom: 60px;
-        }
-
-    }
-    &__image  {
-        @include size(2);
+    &__text-wrap {
+        @include size(11);
         @include shift-left(1);
         @include shift-right(0);
-        @include size-xs(4);
+        @include from-to(601px, 1024px){
+            margin-top: 40px;
+            @include size(24);
+            @include shift(0);
+        }
+        @include size-xs(24);
+        @include shift-xs(0);
+    }
+
+    &__text-wrap-wrapper {
+        @include row-flex();
+    }
+
+    &__description1  {
+        @include size(12);
+        @include shift(0);
+        @include size-xs(24);
+        @include shift-xs(0);
+    }
+    &__description2  {
+        @include size(12);
+        @include shift(0);
+        @include size-xs(24);
+        @include shift-xs(0);
+        @include to(600px){
+            margin-top: 20px;
+        }
+    }
+
+    &__subtext {
+        color: var(--color-dark);
+        font-size: pxWidthInVw(32);
+        @include to(1024px){
+            font-size: 32px;
+        }
+        @include to(600px){
+            font-size: 18px;
+        }
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 38.4px */
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        @include size(24);
+        @include shift(0);
+    }
+    
+    &__image  {
+        @include size(12);
+        @include shift(0);
+        @include size-xs(24);
         @include shift-xs(0);
         overflow: hidden;
         @include from-to(601px, 1024px){
-            @include size(4);
+            @include size(24);
             @include shift(0);
         }
         @include to(600px){
-            height: 50vh;
+            margin-bottom: 40px;
         }
     }
-    &__more  {
-        @include size(1);
-        @include shift(0);
-        @include to(1024px){
-            @include size(4);
-            order: 1;
-            margin-top: calc(var(--section-v-offset) / 2);
-            display: flex;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-        .button-30 {
-            margin-left: var(--grid-text-horisontal-padding);
-            width: max-content;
-            @include to(1024px){
-                width: auto;
-            }
-        }
+    &__button {
+        margin-top: 40px;
     }
-    &__more-image  {
-        margin-bottom: 40px;
-        overflow: hidden;
-        @include to(1024px){
-            display: none;
-        }
-        
-    }
-    &__more-text  {
-        margin-bottom: 40px;
-        @include from-to(601px, 1024px){
-            width: 50%;
-        }
-        @include to(600px){
+    &__image-wrapper {
+        position: relative;
+        padding-bottom: 60%;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            margin-bottom: 24px;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }

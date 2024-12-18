@@ -59,6 +59,12 @@ function ourProcessSlider() {
             nextEl: '[data-home-process-slider-next]',
             prevEl: '[data-home-process-slider-prev]',
         },
+    });
+
+    document.querySelector('[data-home-process-slider]').addEventListener('click', (evt) => {
+        const target = evt.target.closest('[data-home-process-slider-slide-next]');
+        if (!target) return;
+        slider.slideNext();
     })
 }
 
@@ -110,55 +116,65 @@ companyProjectsSlider();
 
 splitToLinesAndFadeUp('.home-with-render-block__title1, .home-with-render-block__title2', gsap)
 
-function homeAwardsAccordeon() {
-    const image = document.querySelector('.home-awards__image');
-    const accordeons = document.querySelectorAll('[data-home-accordeon]');
-    accordeons.forEach((el) => {
-        el.addEventListener('click', function (evt) {
-            el.classList.toggle('active');
-            accordeons.forEach((accordeon) => {
-                if (accordeon !== el) {
-                    accordeon.classList.remove('active');
-                }
-            });
-            // image.querySelector('img').src = el.dataset.img;
-            // image.classList.add('active');
-            // image.style.transform = '';
-            // alignImageByAccordeon(document.querySelectorAll('[data-home-accordeon]')[0], image);
-        });
-    });
+function homeAwardsSlider() {
+    const swiper = new Swiper('[data-home-awards-slider]', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1025: {
+                slidesPerView: 3,
+            }
+        },
+    })
 }
 
-function alignImageByAccordeon(accordeon, image) {
-    const imageTop = accordeon.getBoundingClientRect().top;
-    const accordeonTop = image.getBoundingClientRect().top;
-    console.log(imageTop, accordeonTop);
-    image.style.transform = `translateY(${imageTop - accordeonTop}px)`;
-    
+homeAwardsSlider();
+
+function homeMediaBigSlider() {
+    const swiper = new Swiper('[data-home-media-big-slider]', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        modules: [Navigation],
+        navigation: {
+            nextEl: '[data-home-media-big-slider-next]',
+            prevEl: '[data-home-media-big-slider-prev]',
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 8,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1025: {
+                slidesPerView: 3,
+            }
+        },
+    })
 }
-homeAwardsAccordeon();
+
+homeMediaBigSlider();
 
 
 function homeMediaSlider() {
     const sliderContainer = document.querySelector('[data-home-media-slider]');
     const a = new Swiper(sliderContainer, {
         modules: [FreeMode, Autoplay],
-        slidesPerView: 4,
         speed: 1500,
+        slidesPerView: 'auto',
+        spaceBetween: 60,
+        loop: true,
         autoplay: {
             delay: 2000,
         },
         freeMode: true,
-        breakpoints: {
-            320: {
-                slidesPerView: 2.3,
-                spaceBetween: 8
-            },
-            1025: {
-                slidesPerView: 4,
-                spaceBetween: 20
-            },
-        },
     });
 
 

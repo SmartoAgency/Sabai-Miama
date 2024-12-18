@@ -2,8 +2,7 @@
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
     padding-top: calc(var(--section-v-offset) / 2);
-    padding-bottom: calc(var(--section-v-offset) / 2);
-    background-color: var(--color-gray-bg);
+    padding-bottom: var(--section-v-offset);
     @include to(600px){
         max-width: 100vw;
         overflow: hidden
@@ -12,16 +11,37 @@
         @include row-flex();
     }
     &__subtitle {
-        @include size(1);
+        @include size(24);
         @include shift(0);
-        @include to(1024px){
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--color-gray-bg);
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include to(1024px){ 
             margin-bottom: 15px;
         }
     }
+    &__nav {
+        text-align: right;
+        svg {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            @include to(600px){
+                width: 36px;
+                height: 36px;
+            }
+        }
+        &>:nth-child(n+2) {
+            margin-left: 20px;
+        }
+    }
     &__slider {
-        @include size(4);
+        @include size(24);
         @include shift(0);
-        @include size-xs(4);
+        @include size-xs(24);
         @include shift-xs(0);
         @include to(600px){
             .swiper-container {
@@ -29,30 +49,45 @@
             }
         }
     }
-    &__title {
-        @include size(3);
-        @include shift(0);
-        margin-bottom: calc(var(--section-v-offset) / 2);
-        @include to(1024px){
-            @include size(4);
+    &__big-slider {
+
+        margin-bottom: 40px;
+    }
+    &__big-slide {
+        padding: 20px;
+        background-color: var(--color-gray-bg);
+    }
+    &__big-slide-img-wrapper {
+
+    }
+    &__big-slide-img {
+        position: relative;
+        padding-bottom: 88%;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
+    }
+    &__big-slide-text {
+        margin-top: 20px;
+        text-align: center;
+    }
+    &__slider .swiper-slide {
+        width: 185px;
     }
     &__item {
         background-color: var(--color-white);
-        padding: pxWidthInVw(80) 80px;
         text-align: center;
         display: block;
-        @include to(1024px){
-            padding: 40px;
-            width: auto;
-        }
-        @include to(600px){
-            padding: 16px;
-        }
         img {
-            height: 48px;
-            width: auto;
+            width: 185px;
+            height: 68px;
             margin: auto;
+            object-fit: contain;
         }
     }
 }

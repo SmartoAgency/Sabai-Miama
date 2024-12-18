@@ -5,7 +5,7 @@
     color: var(--color-white);
     border: 1px solid rgba($color-white, 0.2);
     border-radius: 100px;
-    padding: 15px 27px;
+    padding: 15px 40px 15px 27px;
     position: relative;
     overflow: hidden;
     transition: 0.45s cubic-bezier(0.3, 1, 0.8, 1);
@@ -25,7 +25,10 @@
         border: 1px solid var(--color-dark);
         color: var(--color-dark);
         @include text-style-1920-h-5;
-        padding: pxWidthInVw(18) 18px;
+        padding: pxWidthInVw(18) Min(pxWidthInVw(40), 40px) pxWidthInVw(18) 18px;
+        rect {
+            fill: var(--color-accent-green);
+        }
         @include to(600px){
             padding: 8px 16px 8px 8px;
         }

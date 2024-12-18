@@ -6,108 +6,45 @@
     padding-bottom: var(--section-v-offset);
     &__content {
         @include row-flex();
+        &>.button-30 {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 18px 40px;
+            @include to(600px){
+                padding: 8px 12px 8px 12px;
+            }
+        }
     }
-    &__slider {
-        margin-bottom: calc(var(--section-v-offset) / 2);
-        @include size(4);
+
+    .project-detailed-card {
+        @include size(12);
         @include shift(0);
-        @include size-xs(4);
+        margin-bottom: pxInVh(80);
+        @include from-to(601px, 1024px){
+            @include size(24);
+            @include shift(0);
+            margin-bottom: 40px;
+        }
+        @include to(600px){
+            margin-bottom: 40px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        @include size-xs(24);
         @include shift-xs(0);
     }
 
     &__title {
-        @include size(2);
+        @include size(24);
         @include shift(0);
-        @include to(1024px){
-            order: -1;
-            margin-bottom: calc(var(--section-v-offset) / 2);
-        }
-    }
-    &__description {
-        @include size(1);
-        @include shift(0);
-    }
-    &__counter {
-        @include size(1);
-        @include shift(0);
-        text-align: right;
-        @include to(1024px){
-            @include size(2);
-            @include shift-left(2);
-            text-align: left;
-        }
-        @include to(600px){
-            @include size(4);
-            @include shift-left(0.1);
-            text-align: left;
-        }
-        svg {
-            cursor: pointer;
-            @include to(1024px){
-                width: 60px;
-                height: 60px;
-            }
-            @include to(600px){
-                width: 48px;
-                height: 48px;
-                path {
-                    transform-origin: center;
-                    transform-box: fill-box;
-                    transform: scale(1.5);
-                }
-            }
-        }
-        svg~svg {
-            margin-left: 20px;
-            @include to(600px){
-                margin-left: 12px;
-            }
-        }
-    }
-    &__slide {
-        padding-bottom: 100%;
-        position: relative;
-        overflow: hidden;
-        &:after {
-            content: '';
-            transition: opacity 0.3s;
-            pointer-events: none;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%);
-            opacity: 0;
-        }
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-    &__slide-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        @include to(1024px){
-            display: none;
-        }
-        &-top {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
+        
+        border-bottom: 1px solid var(--color-gray-bg);
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+        @include to(1024px){ 
+            padding-bottom: 15px;
             margin-bottom: 20px;
-        }
-    }
-    @media (hover: hover) {
-        &__slider:hover .swiper-slide:not(:hover) :after {
-            opacity: 1;
         }
     }
 }

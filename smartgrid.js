@@ -4,7 +4,7 @@ const { offset } = require('smart-grid/system/defaults/settings');
 /* It's principal settings in smart grid project */
 var settings = {
     outputStyle: 'scss', /* less || scss || sass || styl */
-    columns: 4, /* number of grid columns */
+    columns: 24, /* number of grid columns */
     offset: '20px', /* gutter width px || % || rem */
     fields: '40px',
     mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */

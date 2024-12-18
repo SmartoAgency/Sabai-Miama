@@ -8,36 +8,72 @@
     './assets/images/home/home-company-projects/image-4.jpg',
     './assets/images/home/home-company-projects/image-5.jpg',
   ];
+  var projects = [
+    {
+        title: '4040 KIAORA ST. COCONUT GROVE, FL',
+        area: '36,695',
+        bedrooms: '5',
+        bathrooms: '7',
+        garageSpaces: '3',
+        img: './assets/images/home/home-company-projects/new-projects/image.jpg',
+        link: '/projects'
+    },
+    {
+        title: '5440 LA GORCE DR. MIAMI BEACH, FL',
+        area: '12,100',
+        bedrooms: '4',
+        bathrooms: '6',
+        garageSpaces: '3',
+        img: './assets/images/home/home-company-projects/new-projects/image-3.jpg',
+        link: '/projects'
+    },
+    {
+        title: 'HENDRY COUNTY, FL',
+        area: '8,492',
+        bedrooms: '5',
+        bathrooms: '5',
+        garageSpaces: '3',
+        img: './assets/images/home/home-company-projects/new-projects/image-1.jpg',
+        link: '/projects'
+    },
+    {
+        title: '79 N HIBISCUS DR. MIAMI BEACH, FL',
+        area: '10,454',
+        bedrooms: '5',
+        bathrooms: '5',
+        garageSpaces: '2',
+        img: './assets/images/home/home-company-projects/new-projects/image-3.jpg',
+        link: '/projects'
+    }
+  ]
 
 .home-company-projects
-  +screenGrid
   .home-company-projects__content
-    .home-company-projects__slider.swiper-container(data-home-company-projects-slider)
-      .swiper-wrapper
-        each val in slides
-          .swiper-slide
-            .home-company-projects__slide
-              img(src=val, alt="#")
-    .home-company-projects__title.text-style-1920-h-2.g_grid-text-horisontal-padding company’s projects
-    .home-company-projects__description.g_grid-text-horisontal-padding
-      .swiper-container(data-home-company-projects-slider-second)
-        .swiper-wrapper
-          each val, index in slides
-            .swiper-slide.home-company-projects__slide-text
-              .swiper-slide.home-company-projects__slide-text-top
-                span (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                  <path d="M6.4 19.5L5 18.1L10.6 12.5L5 6.9L6.4 5.5L12 11.1L17.6 5.5L19 6.9L13.4 12.5L19 18.1L17.6 19.5L12 13.9L6.4 19.5Z" fill="#969696"/>
-                </svg>
-                span )
-              div.text-style-1920-h-4 #{index} BRICKELL BAY DR. MIAMI, FL
-              div Welcome to this penthouse spanning 7,581 square feet across two magnificent floors. In this penthouse, every detail resonates with luxury and purpose, creating an ambiance that is simultaneously inspiring and welcoming.
-    .home-company-projects__counter.g_grid-text-horisontal-padding
-      <svg data-home-company-projects-slider-prev width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="78.5" height="78.5" rx="39.5" stroke="#5D6357"/>
-        <path d="M38.1011 30.4706L28.7797 40M28.7797 40L38.1011 49.5294M28.7797 40C34.3035 40 46.5249 40 51.2202 40" stroke="#5D6357" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <svg data-home-company-projects-slider-next width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0.5" y="0.5" width="79" height="79" rx="39.5" stroke="#5D6357"/>
-        <path d="M41.899 49.5294L51.2204 40M51.2204 40L41.899 30.4706M51.2204 40C45.6966 40 33.4751 40 28.7799 40" stroke="#5D6357" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+    .home-company-projects__title.text-style-1920-h-2 company’s projects
+    each val in projects
+      .project-detailed-card
+        .project-detailed-card__top
+          .project-detailed-card__title #{val.title}
+          .project-detailed-card__subtitle #{val.area} sqft
+        .project-detailed-card__img
+          img(loading="lazy" src=val.img alt="")
+        .project-detailed-card__description
+          .project-detailed-card__description-item
+            .project-detailed-card__description-item-value #{val.bedrooms} 
+            .project-detailed-card__description-item-text beds
+          .project-detailed-card__description-item
+            .project-detailed-card__description-item-value #{val.bathrooms} 
+            .project-detailed-card__description-item-text baths
+          .project-detailed-card__description-item
+            .project-detailed-card__description-item-value #{val.garageSpaces} 
+            .project-detailed-card__description-item-text garage spaces
+          <a class="button-30 button-30--body project-detailed-card__button" href="/single-project">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="44" height="44" rx="22" fill="#1C1B20" />
+              <path d="M29 22.998H23V28.998H21V22.998H15V20.998H21V14.998H23V20.998H29V22.998Z" fill="white" />
+            </svg>
+            <span>Explore project</span>
+          </a>
+    <a class="button-30 button-30--body project-detailed-card__button" href="/projects">
+      <span>View more projects</span>
+    </a>

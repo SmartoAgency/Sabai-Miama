@@ -1,0 +1,107 @@
+.project-detailed-card {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-line, #E1E1E1);
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-size: pxWidthInVw(32);
+        @include to(1024px){
+            font-size: 32px;
+        }
+        @include to(600px){
+            font-size: 18px;
+        }
+        line-height: 140%;
+    }
+    &__subtitle {
+        color: #000;
+        font-size: pxWidthInVw(32);
+        @include to(1024px){
+            font-size: 32px;
+        }
+        @include to(600px){
+            font-size: 18px;
+        }
+        font-weight: 300;
+        line-height: 140%; /* 44.8px */
+        text-transform: uppercase;
+    }
+    &__img {
+        position: relative;
+        padding-bottom: 61%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__description {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        @include to(600px){
+            align-items: flex-start;
+        }
+        &-item:nth-child(n+2) {
+            border-left: 1px solid #111112;
+            padding-left: pxWidthInVw(40);
+            
+        }
+        &-item {
+            @include to(600px){
+                width: 33%;
+                flex-shrink: 0;
+            }
+            &-value {
+                color: var(--Black, #111112);
+                font-size: pxWidthInVw(48);
+                @include to(1024px){
+                    font-size: 48px;
+                }
+                @include to(600px){
+                    font-size: 24px;
+                }
+                font-style: normal;
+                font-weight: 300;
+                line-height: 100%; /* 48px */
+                letter-spacing: -1.92px;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+
+            }
+            &-text {
+                color: var(--Black, #111112);
+                font-size: pxWidthInVw(24);
+                
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+                text-transform: uppercase;
+                padding-right: pxWidthInVw(40);
+                @include to(1024px){
+                    font-size: 24px;
+                    padding-right: 40px;
+                }
+                @include to(600px){
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    &__button {
+        width: max-content;
+        margin-left: auto;
+        @include to(600px){
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

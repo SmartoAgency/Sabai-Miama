@@ -2,6 +2,9 @@
     position: relative;
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
+    padding-bottom: var(--section-v-offset);
+    z-index: 2;
+    background-color: var(--color-white);
     @include to(1024px){
         padding-bottom: var(--section-v-offset);
     }
@@ -9,198 +12,41 @@
         @include row-flex();
     }   
     &__subtitle {
-        @include size(1);
+        @include size(24);
         @include shift(0);
-        @include to(1024px){
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--color-gray-bg);
+        margin-bottom: 40px;
+        @include to(1024px){ 
             margin-bottom: 15px;
         }
     }
-    &__title {
-        @include size(3);
+    &__slider {
+        @include size(24);
         @include shift(0);
-        margin-bottom: calc(var(--section-v-offset) / 2);
-        @include to(1024px){
-            @include size(4);
-        }
     }
-    &__accordeon-wrapper {
-        background-color: var(--color-white);
-        @include size(3);
-        @include shift-left(1);
-        @include shift-right(0);
-        @include size-xs(4);
-        @include shift-xs(0);
-        @include from(1025px){
-            margin-bottom: 40px;
-            border-left: 1px solid var(--gray-line, #E1E1E1);
-            border-right: 1px solid var(--gray-line, #E1E1E1);
-        }
-        @include from-to(601px, 1024px){
-            @include size(4);
-            @include shift(0);
-            margin-left: calc(0% + 11px);
-            margin-right: calc(0% + 11px);
-        }
-        @include to(600px){
-            border-left: 1px solid var(--gray-line, #E1E1E1);
-            border-right: 1px solid var(--gray-line, #E1E1E1);
-            padding-left: 0;
-            padding-right: 0;
-        }
+    &__slide {
+        background: #F1F1F1;
+        display: flex;
+        align-items: center;
+        padding: pxWidthInVw(40);
     }
-    
-    &__accordeon {
+    &__slide-img {
+        width: 33.3%;
+    }
+    &__slide-img-wrapper {
         position: relative;
-        @include row-flex();
-        padding-top: 40px;
-        padding-bottom: 40px;
-        align-items: flex-start;
-        border-top: 1px solid var(--gray-line, #E1E1E1);
-        border-bottom: 1px solid var(--gray-line, #E1E1E1);
-        cursor: pointer;
-        @include from(1025px){
-            margin-left: -20px;
-            margin-right: -20px;
-            padding-left: 20px;
-            padding-right: 20px;
-            width: calc(100% + 40px);
-        }
-        @include from-to(601px, 1024px){
-            // border-left: 1px solid var(--gray-line, #E1E1E1);
-            // border-left: 1px solid var(--gray-line, #E1E1E1);
-        }
-        @include to(600px){
-            padding-top: 16px;
-            padding-bottom: 16px;
-            margin-left: 0px;
-            margin-right: 0px;
-        }
-        &-subtitle {
-            @include size(1.35);
-            @include shift(0);
-            @include size-xs(4);
-            @include shift-xs(0);
-            @include to(600px){
-                margin-bottom: 8px;
-            }
-        }
-        &-title {
-            @include size(2);
-            @include shift(0);
-            @include size-xs(3);
-            @include shift-xs(0);
-            @include from(1025px){
-                padding-top: 8px;
-                padding-bottom: 8px;
-                align-self: flex-end;
-                height: calc(1em + 16px);
-            }
-            @include to(1024px){
-                margin-bottom: 20px;
-            }
-            @include to(600px){
-                // @include size(3);
-                margin-bottom: 0;
-            }
-        }
-        &-icon {
-            @include size(0.65);
-            @include shift(0);
-            text-align: right;
-            cursor: pointer;
-            path,
-            rect {
-                transition: fill .25s ease-out;
-            }
-            @include from(1025px){
-                height: 80px;
-            }
-            @include from-to(601px, 1024px){
-                svg {
-                    width: 60px;
-                    height: 60px;
-                }
-            }
-            @include to(600px){
-                @include size(1);
-                margin-top: -30px;
-                svg {
-                    width: 48px;
-                    height: 48px;
-                }
-            }
-        }
-        &-content {
-            @include size(4);
-            padding-left: var(--grid-text-horisontal-padding);
-            padding-right: var(--grid-text-horisontal-padding);
-        }
-
-        &-image  {
-            @include size(1.384);
-            @include shift(0);
-            @include size-xs(4);
-            @include shift-xs(0);
-            padding: 45px;
-            background-color: var(--color-gray-bg);
-            height: 240px;
-            opacity: 0;
-            transition: opacity .25s ease-out;
+        padding-bottom: 100%;
+        img {
             position: absolute;
-            right: calc(100% + 20px);
             top: 0;
-            @include to(1024px){
-                position: static;
-                display: none;
-            }
-            @include from-to(601px, 1024px){
-                @include size(4);
-            }
-            @include to(600px){
-                height: 123px;
-                padding: 24px;
-                margin-top: 16px;
-                border-top: 1px solid var(--color-gray-line);
-                margin-left: 0;
-                margin-right: 0;
-                width: 100%;
-                margin-bottom: -16px;
-            }
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-            &.active {
-                opacity: 1;
-
-            }
-        }
-        &.active {
-            .home-awards__accordeon-image {
-                opacity: 1;
-                display: block;
-            }   
-            .home-awards__accordeon-icon path {
-                fill: var(--color-white);
-            }
-            .home-awards__accordeon-icon rect {
-                fill: var(--color-accent-green);
-            }
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                .home-awards__accordeon-icon path {
-                    fill: var(--color-white);
-                }
-                .home-awards__accordeon-icon rect {
-                    fill: var(--color-accent-green);
-                }
-            }
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
     }
-    &__accordeon~&__accordeon  {
-        margin-top: -1px;
+    &__slide-text {
+        margin-left: pxWidthInVw(40);
     }
 }
