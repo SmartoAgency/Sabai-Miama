@@ -170,7 +170,6 @@ function homeMediaSlider() {
         speed: 1500,
         slidesPerView: 'auto',
         spaceBetween: 60,
-        loop: true,
         autoplay: {
             delay: 2000,
         },
